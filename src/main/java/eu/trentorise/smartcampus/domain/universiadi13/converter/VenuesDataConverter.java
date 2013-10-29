@@ -96,6 +96,7 @@ public class VenuesDataConverter implements DataConverter {
 		
 		Map<String,Object> map = new TreeMap<String, Object>();
 		map.put("category", venue.getCategory());
+		map.put("imageUrl", venue.getImageUrl());
 		try {
 			gp.setCustomData(new ObjectMapper().writeValueAsString(map));
 		} catch (Exception e) {

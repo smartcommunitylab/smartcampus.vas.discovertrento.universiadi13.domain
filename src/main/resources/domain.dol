@@ -35,6 +35,18 @@ DomainObject UniversiadiEventsService implements EventService {
         invoke subscribeEvents();
     }
 }
+DomainObject UniversiadiScheduleService implements EventService {
+    
+    @ServiceNotification(serviceId="it.sayservice.ext.universiadi2013", methodName="GetCompetitionSchedule", converter="eu.trentorise.smartcampus.domain.universiadi13.converter.EventsDataConverter")
+    port update(data : GenericEvent[]);
+
+    @Subscription(serviceId="it.sayservice.ext.universiadi2013", methodName="GetCompetitionSchedule")
+    operation subscribeSchedule();       
+    
+    action initialize() {
+        invoke subscribeSchedule();
+    }
+}
 
 DomainObject UniversiadiVenuesService implements POIService {
 

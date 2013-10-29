@@ -23,7 +23,16 @@ import eu.trentorise.smartcampus.domain.discovertrento.GenericEvent;
 
 public class EventsDataConverter implements DataConverter {
 
-	private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd'T'HH:mm");
+	private static final SimpleDateFormat[] sdf = new SimpleDateFormat[]{
+		new SimpleDateFormat("yyyyMMdd'T'HH.mm"),
+		new SimpleDateFormat("yyyyMMdd'T'HH:mm"),
+		new SimpleDateFormat("yyyy-MM-dd'T'HH.mm"),
+		new SimpleDateFormat("yyyy-MM-dd'T'HH:mm"),
+	};
+	private static final SimpleDateFormat[] sdf_nt = new SimpleDateFormat[]{
+		new SimpleDateFormat("yyyy-MM-dd'Tnull'"),
+		new SimpleDateFormat("yyyyMMdd'Tnull'")
+	};
 	private static final String TYPE_UNIVERSIADI = "universiadi13";   
 	private static final SimpleDateFormat sdf_time = new SimpleDateFormat("HH:mm");
 	
@@ -54,6 +63,29 @@ public class EventsDataConverter implements DataConverter {
 		return res;
 	}
 
+	private Date extractDateTime(String dt) {
+		for (SimpleDateFormat f : sdf) {
+			try {
+				return f.parse(dt);
+			} catch (ParseException e) {
+				continue;
+			}
+		}
+		throw new IllegalArgumentException();
+	}
+
+	private Date extractDate(String dt) {
+		for (SimpleDateFormat f : sdf_nt) {
+			try {
+				return f.parse(dt);
+			} catch (ParseException e) {
+				continue;
+			}
+		}
+		throw new IllegalArgumentException();
+	}
+
+
 	private GenericEvent extractGenericEvent(Event ev) throws ParseException {
 		GenericEvent ge = new GenericEvent();
 		
@@ -61,9 +93,27 @@ public class EventsDataConverter implements DataConverter {
 		
 		ge.setSource("Universiadi 2013");
 
-		ge.setFromTime(sdf.parse(ev.getStartDate()).getTime());
-		ge.setToTime(sdf.parse(ev.getEndDate()).getTime());
-		ge.setTiming(sdf_time.format(new Date(ge.getFromTime())) + " - "+sdf_time.format(new Date(ge.getToTime())));
+		boolean hasFromTime = true, hasToTime = true;
+		try {
+			ge.setFromTime(extractDateTime(ev.getStartDate()).getTime());
+		} catch (Exception e1) {
+			hasFromTime = false;
+			ge.setFromTime(extractDate(ev.getStartDate()).getTime());
+		}
+		try {
+			ge.setToTime(extractDateTime(ev.getEndDate()).getTime());
+		} catch (Exception e1) {
+			hasToTime = false;
+			ge.setToTime(extractDate(ev.getEndDate()).getTime());
+		}
+		if (hasFromTime) {
+			String timing = sdf_time.format(new Date(ge.getFromTime()));
+			if (hasToTime){
+				timing += " - "+sdf_time.format(new Date(ge.getToTime()));
+			}
+			ge.setTiming(timing);
+			
+		}
 		
 		ge.setType(TYPE_UNIVERSIADI);
 		
@@ -85,6 +135,9 @@ public class EventsDataConverter implements DataConverter {
 		Map<String,Object> map = new TreeMap<String, Object>();
 		map.put("imageUrl", ev.getImageUrl());
 		map.put("category", ev.getCategory());
+		if (ev.getSportsCount() > 0) {
+			map.put("sports", ev.getSportsList());
+		}
 		try {
 			ge.setCustomData(new ObjectMapper().writeValueAsString(map));
 		} catch (Exception e) {

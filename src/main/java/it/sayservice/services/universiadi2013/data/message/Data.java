@@ -7398,20 +7398,7 @@ public final class Data {
     it.sayservice.services.universiadi2013.data.message.Data.KeyValueOrBuilder getShortDescOrBuilder(
         int index);
     
-    // required string category = 4;
-    boolean hasCategory();
-    String getCategory();
-    
-    // required string published = 5;
-    boolean hasPublished();
-    String getPublished();
-    
-    // optional .it.sayservice.services.universiadi2013.data.message.Contact contact = 6;
-    boolean hasContact();
-    it.sayservice.services.universiadi2013.data.message.Data.Contact getContact();
-    it.sayservice.services.universiadi2013.data.message.Data.ContactOrBuilder getContactOrBuilder();
-    
-    // repeated .it.sayservice.services.universiadi2013.data.message.KeyValue longDesc = 7;
+    // repeated .it.sayservice.services.universiadi2013.data.message.KeyValue longDesc = 4;
     java.util.List<it.sayservice.services.universiadi2013.data.message.Data.KeyValue> 
         getLongDescList();
     it.sayservice.services.universiadi2013.data.message.Data.KeyValue getLongDesc(int index);
@@ -7420,6 +7407,19 @@ public final class Data {
         getLongDescOrBuilderList();
     it.sayservice.services.universiadi2013.data.message.Data.KeyValueOrBuilder getLongDescOrBuilder(
         int index);
+    
+    // required string category = 5;
+    boolean hasCategory();
+    String getCategory();
+    
+    // required string published = 6;
+    boolean hasPublished();
+    String getPublished();
+    
+    // optional .it.sayservice.services.universiadi2013.data.message.Contact contact = 7;
+    boolean hasContact();
+    it.sayservice.services.universiadi2013.data.message.Data.Contact getContact();
+    it.sayservice.services.universiadi2013.data.message.Data.ContactOrBuilder getContactOrBuilder();
     
     // optional string url = 8;
     boolean hasUrl();
@@ -7433,9 +7433,20 @@ public final class Data {
     boolean hasPoiId();
     String getPoiId();
     
-    // optional string eventId = 11;
-    boolean hasEventId();
-    String getEventId();
+    // repeated string eventId = 11;
+    java.util.List<String> getEventIdList();
+    int getEventIdCount();
+    String getEventId(int index);
+    
+    // repeated string sports = 12;
+    java.util.List<String> getSportsList();
+    int getSportsCount();
+    String getSports(int index);
+    
+    // repeated string tags = 13;
+    java.util.List<String> getTagsList();
+    int getTagsCount();
+    String getTags(int index);
   }
   public static final class News extends
       com.google.protobuf.GeneratedMessage
@@ -7540,8 +7551,29 @@ public final class Data {
       return shortDesc_.get(index);
     }
     
-    // required string category = 4;
-    public static final int CATEGORY_FIELD_NUMBER = 4;
+    // repeated .it.sayservice.services.universiadi2013.data.message.KeyValue longDesc = 4;
+    public static final int LONGDESC_FIELD_NUMBER = 4;
+    private java.util.List<it.sayservice.services.universiadi2013.data.message.Data.KeyValue> longDesc_;
+    public java.util.List<it.sayservice.services.universiadi2013.data.message.Data.KeyValue> getLongDescList() {
+      return longDesc_;
+    }
+    public java.util.List<? extends it.sayservice.services.universiadi2013.data.message.Data.KeyValueOrBuilder> 
+        getLongDescOrBuilderList() {
+      return longDesc_;
+    }
+    public int getLongDescCount() {
+      return longDesc_.size();
+    }
+    public it.sayservice.services.universiadi2013.data.message.Data.KeyValue getLongDesc(int index) {
+      return longDesc_.get(index);
+    }
+    public it.sayservice.services.universiadi2013.data.message.Data.KeyValueOrBuilder getLongDescOrBuilder(
+        int index) {
+      return longDesc_.get(index);
+    }
+    
+    // required string category = 5;
+    public static final int CATEGORY_FIELD_NUMBER = 5;
     private java.lang.Object category_;
     public boolean hasCategory() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
@@ -7572,8 +7604,8 @@ public final class Data {
       }
     }
     
-    // required string published = 5;
-    public static final int PUBLISHED_FIELD_NUMBER = 5;
+    // required string published = 6;
+    public static final int PUBLISHED_FIELD_NUMBER = 6;
     private java.lang.Object published_;
     public boolean hasPublished() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
@@ -7604,8 +7636,8 @@ public final class Data {
       }
     }
     
-    // optional .it.sayservice.services.universiadi2013.data.message.Contact contact = 6;
-    public static final int CONTACT_FIELD_NUMBER = 6;
+    // optional .it.sayservice.services.universiadi2013.data.message.Contact contact = 7;
+    public static final int CONTACT_FIELD_NUMBER = 7;
     private it.sayservice.services.universiadi2013.data.message.Data.Contact contact_;
     public boolean hasContact() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
@@ -7615,27 +7647,6 @@ public final class Data {
     }
     public it.sayservice.services.universiadi2013.data.message.Data.ContactOrBuilder getContactOrBuilder() {
       return contact_;
-    }
-    
-    // repeated .it.sayservice.services.universiadi2013.data.message.KeyValue longDesc = 7;
-    public static final int LONGDESC_FIELD_NUMBER = 7;
-    private java.util.List<it.sayservice.services.universiadi2013.data.message.Data.KeyValue> longDesc_;
-    public java.util.List<it.sayservice.services.universiadi2013.data.message.Data.KeyValue> getLongDescList() {
-      return longDesc_;
-    }
-    public java.util.List<? extends it.sayservice.services.universiadi2013.data.message.Data.KeyValueOrBuilder> 
-        getLongDescOrBuilderList() {
-      return longDesc_;
-    }
-    public int getLongDescCount() {
-      return longDesc_.size();
-    }
-    public it.sayservice.services.universiadi2013.data.message.Data.KeyValue getLongDesc(int index) {
-      return longDesc_.get(index);
-    }
-    public it.sayservice.services.universiadi2013.data.message.Data.KeyValueOrBuilder getLongDescOrBuilder(
-        int index) {
-      return longDesc_.get(index);
     }
     
     // optional string url = 8;
@@ -7734,50 +7745,62 @@ public final class Data {
       }
     }
     
-    // optional string eventId = 11;
+    // repeated string eventId = 11;
     public static final int EVENTID_FIELD_NUMBER = 11;
-    private java.lang.Object eventId_;
-    public boolean hasEventId() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
+    private com.google.protobuf.LazyStringList eventId_;
+    public java.util.List<String>
+        getEventIdList() {
+      return eventId_;
     }
-    public String getEventId() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
-          eventId_ = s;
-        }
-        return s;
-      }
+    public int getEventIdCount() {
+      return eventId_.size();
     }
-    private com.google.protobuf.ByteString getEventIdBytes() {
-      java.lang.Object ref = eventId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-        eventId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public String getEventId(int index) {
+      return eventId_.get(index);
+    }
+    
+    // repeated string sports = 12;
+    public static final int SPORTS_FIELD_NUMBER = 12;
+    private com.google.protobuf.LazyStringList sports_;
+    public java.util.List<String>
+        getSportsList() {
+      return sports_;
+    }
+    public int getSportsCount() {
+      return sports_.size();
+    }
+    public String getSports(int index) {
+      return sports_.get(index);
+    }
+    
+    // repeated string tags = 13;
+    public static final int TAGS_FIELD_NUMBER = 13;
+    private com.google.protobuf.LazyStringList tags_;
+    public java.util.List<String>
+        getTagsList() {
+      return tags_;
+    }
+    public int getTagsCount() {
+      return tags_.size();
+    }
+    public String getTags(int index) {
+      return tags_.get(index);
     }
     
     private void initFields() {
       id_ = "";
       title_ = java.util.Collections.emptyList();
       shortDesc_ = java.util.Collections.emptyList();
+      longDesc_ = java.util.Collections.emptyList();
       category_ = "";
       published_ = "";
       contact_ = it.sayservice.services.universiadi2013.data.message.Data.Contact.getDefaultInstance();
-      longDesc_ = java.util.Collections.emptyList();
       url_ = "";
       imageUrl_ = "";
       poiId_ = "";
-      eventId_ = "";
+      eventId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      sports_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -7808,14 +7831,14 @@ public final class Data {
           return false;
         }
       }
-      if (hasContact()) {
-        if (!getContact().isInitialized()) {
+      for (int i = 0; i < getLongDescCount(); i++) {
+        if (!getLongDesc(i).isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
       }
-      for (int i = 0; i < getLongDescCount(); i++) {
-        if (!getLongDesc(i).isInitialized()) {
+      if (hasContact()) {
+        if (!getContact().isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -7836,17 +7859,17 @@ public final class Data {
       for (int i = 0; i < shortDesc_.size(); i++) {
         output.writeMessage(3, shortDesc_.get(i));
       }
+      for (int i = 0; i < longDesc_.size(); i++) {
+        output.writeMessage(4, longDesc_.get(i));
+      }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(4, getCategoryBytes());
+        output.writeBytes(5, getCategoryBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(5, getPublishedBytes());
+        output.writeBytes(6, getPublishedBytes());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeMessage(6, contact_);
-      }
-      for (int i = 0; i < longDesc_.size(); i++) {
-        output.writeMessage(7, longDesc_.get(i));
+        output.writeMessage(7, contact_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeBytes(8, getUrlBytes());
@@ -7857,8 +7880,14 @@ public final class Data {
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeBytes(10, getPoiIdBytes());
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        output.writeBytes(11, getEventIdBytes());
+      for (int i = 0; i < eventId_.size(); i++) {
+        output.writeBytes(11, eventId_.getByteString(i));
+      }
+      for (int i = 0; i < sports_.size(); i++) {
+        output.writeBytes(12, sports_.getByteString(i));
+      }
+      for (int i = 0; i < tags_.size(); i++) {
+        output.writeBytes(13, tags_.getByteString(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -7881,21 +7910,21 @@ public final class Data {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, shortDesc_.get(i));
       }
+      for (int i = 0; i < longDesc_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, longDesc_.get(i));
+      }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, getCategoryBytes());
+          .computeBytesSize(5, getCategoryBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(5, getPublishedBytes());
+          .computeBytesSize(6, getPublishedBytes());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, contact_);
-      }
-      for (int i = 0; i < longDesc_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, longDesc_.get(i));
+          .computeMessageSize(7, contact_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
@@ -7909,9 +7938,32 @@ public final class Data {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(10, getPoiIdBytes());
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(11, getEventIdBytes());
+      {
+        int dataSize = 0;
+        for (int i = 0; i < eventId_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(eventId_.getByteString(i));
+        }
+        size += dataSize;
+        size += 1 * getEventIdList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < sports_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(sports_.getByteString(i));
+        }
+        size += dataSize;
+        size += 1 * getSportsList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < tags_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(tags_.getByteString(i));
+        }
+        size += dataSize;
+        size += 1 * getTagsList().size();
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -8031,8 +8083,8 @@ public final class Data {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
           getTitleFieldBuilder();
           getShortDescFieldBuilder();
-          getContactFieldBuilder();
           getLongDescFieldBuilder();
+          getContactFieldBuilder();
         }
       }
       private static Builder create() {
@@ -8055,30 +8107,34 @@ public final class Data {
         } else {
           shortDescBuilder_.clear();
         }
+        if (longDescBuilder_ == null) {
+          longDesc_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          longDescBuilder_.clear();
+        }
         category_ = "";
-        bitField0_ = (bitField0_ & ~0x00000008);
-        published_ = "";
         bitField0_ = (bitField0_ & ~0x00000010);
+        published_ = "";
+        bitField0_ = (bitField0_ & ~0x00000020);
         if (contactBuilder_ == null) {
           contact_ = it.sayservice.services.universiadi2013.data.message.Data.Contact.getDefaultInstance();
         } else {
           contactBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000020);
-        if (longDescBuilder_ == null) {
-          longDesc_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
-        } else {
-          longDescBuilder_.clear();
-        }
+        bitField0_ = (bitField0_ & ~0x00000040);
         url_ = "";
         bitField0_ = (bitField0_ & ~0x00000080);
         imageUrl_ = "";
         bitField0_ = (bitField0_ & ~0x00000100);
         poiId_ = "";
         bitField0_ = (bitField0_ & ~0x00000200);
-        eventId_ = "";
+        eventId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000400);
+        sports_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000800);
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00001000);
         return this;
       }
       
@@ -8139,30 +8195,30 @@ public final class Data {
         } else {
           result.shortDesc_ = shortDescBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+        if (longDescBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+            longDesc_ = java.util.Collections.unmodifiableList(longDesc_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.longDesc_ = longDesc_;
+        } else {
+          result.longDesc_ = longDescBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000002;
         }
         result.category_ = category_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
           to_bitField0_ |= 0x00000004;
         }
         result.published_ = published_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
           to_bitField0_ |= 0x00000008;
         }
         if (contactBuilder_ == null) {
           result.contact_ = contact_;
         } else {
           result.contact_ = contactBuilder_.build();
-        }
-        if (longDescBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) == 0x00000040)) {
-            longDesc_ = java.util.Collections.unmodifiableList(longDesc_);
-            bitField0_ = (bitField0_ & ~0x00000040);
-          }
-          result.longDesc_ = longDesc_;
-        } else {
-          result.longDesc_ = longDescBuilder_.build();
         }
         if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
           to_bitField0_ |= 0x00000010;
@@ -8176,10 +8232,24 @@ public final class Data {
           to_bitField0_ |= 0x00000040;
         }
         result.poiId_ = poiId_;
-        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
-          to_bitField0_ |= 0x00000080;
+        if (((bitField0_ & 0x00000400) == 0x00000400)) {
+          eventId_ = new com.google.protobuf.UnmodifiableLazyStringList(
+              eventId_);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.eventId_ = eventId_;
+        if (((bitField0_ & 0x00000800) == 0x00000800)) {
+          sports_ = new com.google.protobuf.UnmodifiableLazyStringList(
+              sports_);
+          bitField0_ = (bitField0_ & ~0x00000800);
+        }
+        result.sports_ = sports_;
+        if (((bitField0_ & 0x00001000) == 0x00001000)) {
+          tags_ = new com.google.protobuf.UnmodifiableLazyStringList(
+              tags_);
+          bitField0_ = (bitField0_ & ~0x00001000);
+        }
+        result.tags_ = tags_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -8251,20 +8321,11 @@ public final class Data {
             }
           }
         }
-        if (other.hasCategory()) {
-          setCategory(other.getCategory());
-        }
-        if (other.hasPublished()) {
-          setPublished(other.getPublished());
-        }
-        if (other.hasContact()) {
-          mergeContact(other.getContact());
-        }
         if (longDescBuilder_ == null) {
           if (!other.longDesc_.isEmpty()) {
             if (longDesc_.isEmpty()) {
               longDesc_ = other.longDesc_;
-              bitField0_ = (bitField0_ & ~0x00000040);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureLongDescIsMutable();
               longDesc_.addAll(other.longDesc_);
@@ -8277,7 +8338,7 @@ public final class Data {
               longDescBuilder_.dispose();
               longDescBuilder_ = null;
               longDesc_ = other.longDesc_;
-              bitField0_ = (bitField0_ & ~0x00000040);
+              bitField0_ = (bitField0_ & ~0x00000008);
               longDescBuilder_ = 
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                    getLongDescFieldBuilder() : null;
@@ -8285,6 +8346,15 @@ public final class Data {
               longDescBuilder_.addAllMessages(other.longDesc_);
             }
           }
+        }
+        if (other.hasCategory()) {
+          setCategory(other.getCategory());
+        }
+        if (other.hasPublished()) {
+          setPublished(other.getPublished());
+        }
+        if (other.hasContact()) {
+          mergeContact(other.getContact());
         }
         if (other.hasUrl()) {
           setUrl(other.getUrl());
@@ -8295,8 +8365,35 @@ public final class Data {
         if (other.hasPoiId()) {
           setPoiId(other.getPoiId());
         }
-        if (other.hasEventId()) {
-          setEventId(other.getEventId());
+        if (!other.eventId_.isEmpty()) {
+          if (eventId_.isEmpty()) {
+            eventId_ = other.eventId_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+          } else {
+            ensureEventIdIsMutable();
+            eventId_.addAll(other.eventId_);
+          }
+          onChanged();
+        }
+        if (!other.sports_.isEmpty()) {
+          if (sports_.isEmpty()) {
+            sports_ = other.sports_;
+            bitField0_ = (bitField0_ & ~0x00000800);
+          } else {
+            ensureSportsIsMutable();
+            sports_.addAll(other.sports_);
+          }
+          onChanged();
+        }
+        if (!other.tags_.isEmpty()) {
+          if (tags_.isEmpty()) {
+            tags_ = other.tags_;
+            bitField0_ = (bitField0_ & ~0x00001000);
+          } else {
+            ensureTagsIsMutable();
+            tags_.addAll(other.tags_);
+          }
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -8327,14 +8424,14 @@ public final class Data {
             return false;
           }
         }
-        if (hasContact()) {
-          if (!getContact().isInitialized()) {
+        for (int i = 0; i < getLongDescCount(); i++) {
+          if (!getLongDesc(i).isInitialized()) {
             
             return false;
           }
         }
-        for (int i = 0; i < getLongDescCount(); i++) {
-          if (!getLongDesc(i).isInitialized()) {
+        if (hasContact()) {
+          if (!getContact().isInitialized()) {
             
             return false;
           }
@@ -8383,28 +8480,28 @@ public final class Data {
               break;
             }
             case 34: {
-              bitField0_ |= 0x00000008;
-              category_ = input.readBytes();
+              it.sayservice.services.universiadi2013.data.message.Data.KeyValue.Builder subBuilder = it.sayservice.services.universiadi2013.data.message.Data.KeyValue.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addLongDesc(subBuilder.buildPartial());
               break;
             }
             case 42: {
               bitField0_ |= 0x00000010;
-              published_ = input.readBytes();
+              category_ = input.readBytes();
               break;
             }
             case 50: {
+              bitField0_ |= 0x00000020;
+              published_ = input.readBytes();
+              break;
+            }
+            case 58: {
               it.sayservice.services.universiadi2013.data.message.Data.Contact.Builder subBuilder = it.sayservice.services.universiadi2013.data.message.Data.Contact.newBuilder();
               if (hasContact()) {
                 subBuilder.mergeFrom(getContact());
               }
               input.readMessage(subBuilder, extensionRegistry);
               setContact(subBuilder.buildPartial());
-              break;
-            }
-            case 58: {
-              it.sayservice.services.universiadi2013.data.message.Data.KeyValue.Builder subBuilder = it.sayservice.services.universiadi2013.data.message.Data.KeyValue.newBuilder();
-              input.readMessage(subBuilder, extensionRegistry);
-              addLongDesc(subBuilder.buildPartial());
               break;
             }
             case 66: {
@@ -8423,8 +8520,18 @@ public final class Data {
               break;
             }
             case 90: {
-              bitField0_ |= 0x00000400;
-              eventId_ = input.readBytes();
+              ensureEventIdIsMutable();
+              eventId_.add(input.readBytes());
+              break;
+            }
+            case 98: {
+              ensureSportsIsMutable();
+              sports_.add(input.readBytes());
+              break;
+            }
+            case 106: {
+              ensureTagsIsMutable();
+              tags_.add(input.readBytes());
               break;
             }
           }
@@ -8841,175 +8948,13 @@ public final class Data {
         return shortDescBuilder_;
       }
       
-      // required string category = 4;
-      private java.lang.Object category_ = "";
-      public boolean hasCategory() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      public String getCategory() {
-        java.lang.Object ref = category_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-          category_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      public Builder setCategory(String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
-        category_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearCategory() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        category_ = getDefaultInstance().getCategory();
-        onChanged();
-        return this;
-      }
-      void setCategory(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000008;
-        category_ = value;
-        onChanged();
-      }
-      
-      // required string published = 5;
-      private java.lang.Object published_ = "";
-      public boolean hasPublished() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
-      }
-      public String getPublished() {
-        java.lang.Object ref = published_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-          published_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      public Builder setPublished(String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000010;
-        published_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearPublished() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        published_ = getDefaultInstance().getPublished();
-        onChanged();
-        return this;
-      }
-      void setPublished(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000010;
-        published_ = value;
-        onChanged();
-      }
-      
-      // optional .it.sayservice.services.universiadi2013.data.message.Contact contact = 6;
-      private it.sayservice.services.universiadi2013.data.message.Data.Contact contact_ = it.sayservice.services.universiadi2013.data.message.Data.Contact.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
-          it.sayservice.services.universiadi2013.data.message.Data.Contact, it.sayservice.services.universiadi2013.data.message.Data.Contact.Builder, it.sayservice.services.universiadi2013.data.message.Data.ContactOrBuilder> contactBuilder_;
-      public boolean hasContact() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
-      }
-      public it.sayservice.services.universiadi2013.data.message.Data.Contact getContact() {
-        if (contactBuilder_ == null) {
-          return contact_;
-        } else {
-          return contactBuilder_.getMessage();
-        }
-      }
-      public Builder setContact(it.sayservice.services.universiadi2013.data.message.Data.Contact value) {
-        if (contactBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          contact_ = value;
-          onChanged();
-        } else {
-          contactBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000020;
-        return this;
-      }
-      public Builder setContact(
-          it.sayservice.services.universiadi2013.data.message.Data.Contact.Builder builderForValue) {
-        if (contactBuilder_ == null) {
-          contact_ = builderForValue.build();
-          onChanged();
-        } else {
-          contactBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000020;
-        return this;
-      }
-      public Builder mergeContact(it.sayservice.services.universiadi2013.data.message.Data.Contact value) {
-        if (contactBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) == 0x00000020) &&
-              contact_ != it.sayservice.services.universiadi2013.data.message.Data.Contact.getDefaultInstance()) {
-            contact_ =
-              it.sayservice.services.universiadi2013.data.message.Data.Contact.newBuilder(contact_).mergeFrom(value).buildPartial();
-          } else {
-            contact_ = value;
-          }
-          onChanged();
-        } else {
-          contactBuilder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00000020;
-        return this;
-      }
-      public Builder clearContact() {
-        if (contactBuilder_ == null) {
-          contact_ = it.sayservice.services.universiadi2013.data.message.Data.Contact.getDefaultInstance();
-          onChanged();
-        } else {
-          contactBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000020);
-        return this;
-      }
-      public it.sayservice.services.universiadi2013.data.message.Data.Contact.Builder getContactBuilder() {
-        bitField0_ |= 0x00000020;
-        onChanged();
-        return getContactFieldBuilder().getBuilder();
-      }
-      public it.sayservice.services.universiadi2013.data.message.Data.ContactOrBuilder getContactOrBuilder() {
-        if (contactBuilder_ != null) {
-          return contactBuilder_.getMessageOrBuilder();
-        } else {
-          return contact_;
-        }
-      }
-      private com.google.protobuf.SingleFieldBuilder<
-          it.sayservice.services.universiadi2013.data.message.Data.Contact, it.sayservice.services.universiadi2013.data.message.Data.Contact.Builder, it.sayservice.services.universiadi2013.data.message.Data.ContactOrBuilder> 
-          getContactFieldBuilder() {
-        if (contactBuilder_ == null) {
-          contactBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              it.sayservice.services.universiadi2013.data.message.Data.Contact, it.sayservice.services.universiadi2013.data.message.Data.Contact.Builder, it.sayservice.services.universiadi2013.data.message.Data.ContactOrBuilder>(
-                  contact_,
-                  getParentForChildren(),
-                  isClean());
-          contact_ = null;
-        }
-        return contactBuilder_;
-      }
-      
-      // repeated .it.sayservice.services.universiadi2013.data.message.KeyValue longDesc = 7;
+      // repeated .it.sayservice.services.universiadi2013.data.message.KeyValue longDesc = 4;
       private java.util.List<it.sayservice.services.universiadi2013.data.message.Data.KeyValue> longDesc_ =
         java.util.Collections.emptyList();
       private void ensureLongDescIsMutable() {
-        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
           longDesc_ = new java.util.ArrayList<it.sayservice.services.universiadi2013.data.message.Data.KeyValue>(longDesc_);
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000008;
          }
       }
       
@@ -9125,7 +9070,7 @@ public final class Data {
       public Builder clearLongDesc() {
         if (longDescBuilder_ == null) {
           longDesc_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           longDescBuilder_.clear();
@@ -9181,12 +9126,174 @@ public final class Data {
           longDescBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
               it.sayservice.services.universiadi2013.data.message.Data.KeyValue, it.sayservice.services.universiadi2013.data.message.Data.KeyValue.Builder, it.sayservice.services.universiadi2013.data.message.Data.KeyValueOrBuilder>(
                   longDesc_,
-                  ((bitField0_ & 0x00000040) == 0x00000040),
+                  ((bitField0_ & 0x00000008) == 0x00000008),
                   getParentForChildren(),
                   isClean());
           longDesc_ = null;
         }
         return longDescBuilder_;
+      }
+      
+      // required string category = 5;
+      private java.lang.Object category_ = "";
+      public boolean hasCategory() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      public String getCategory() {
+        java.lang.Object ref = category_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          category_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setCategory(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        category_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearCategory() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        category_ = getDefaultInstance().getCategory();
+        onChanged();
+        return this;
+      }
+      void setCategory(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000010;
+        category_ = value;
+        onChanged();
+      }
+      
+      // required string published = 6;
+      private java.lang.Object published_ = "";
+      public boolean hasPublished() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      public String getPublished() {
+        java.lang.Object ref = published_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          published_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setPublished(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        published_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearPublished() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        published_ = getDefaultInstance().getPublished();
+        onChanged();
+        return this;
+      }
+      void setPublished(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000020;
+        published_ = value;
+        onChanged();
+      }
+      
+      // optional .it.sayservice.services.universiadi2013.data.message.Contact contact = 7;
+      private it.sayservice.services.universiadi2013.data.message.Data.Contact contact_ = it.sayservice.services.universiadi2013.data.message.Data.Contact.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          it.sayservice.services.universiadi2013.data.message.Data.Contact, it.sayservice.services.universiadi2013.data.message.Data.Contact.Builder, it.sayservice.services.universiadi2013.data.message.Data.ContactOrBuilder> contactBuilder_;
+      public boolean hasContact() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      public it.sayservice.services.universiadi2013.data.message.Data.Contact getContact() {
+        if (contactBuilder_ == null) {
+          return contact_;
+        } else {
+          return contactBuilder_.getMessage();
+        }
+      }
+      public Builder setContact(it.sayservice.services.universiadi2013.data.message.Data.Contact value) {
+        if (contactBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          contact_ = value;
+          onChanged();
+        } else {
+          contactBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000040;
+        return this;
+      }
+      public Builder setContact(
+          it.sayservice.services.universiadi2013.data.message.Data.Contact.Builder builderForValue) {
+        if (contactBuilder_ == null) {
+          contact_ = builderForValue.build();
+          onChanged();
+        } else {
+          contactBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000040;
+        return this;
+      }
+      public Builder mergeContact(it.sayservice.services.universiadi2013.data.message.Data.Contact value) {
+        if (contactBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) == 0x00000040) &&
+              contact_ != it.sayservice.services.universiadi2013.data.message.Data.Contact.getDefaultInstance()) {
+            contact_ =
+              it.sayservice.services.universiadi2013.data.message.Data.Contact.newBuilder(contact_).mergeFrom(value).buildPartial();
+          } else {
+            contact_ = value;
+          }
+          onChanged();
+        } else {
+          contactBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000040;
+        return this;
+      }
+      public Builder clearContact() {
+        if (contactBuilder_ == null) {
+          contact_ = it.sayservice.services.universiadi2013.data.message.Data.Contact.getDefaultInstance();
+          onChanged();
+        } else {
+          contactBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000040);
+        return this;
+      }
+      public it.sayservice.services.universiadi2013.data.message.Data.Contact.Builder getContactBuilder() {
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return getContactFieldBuilder().getBuilder();
+      }
+      public it.sayservice.services.universiadi2013.data.message.Data.ContactOrBuilder getContactOrBuilder() {
+        if (contactBuilder_ != null) {
+          return contactBuilder_.getMessageOrBuilder();
+        } else {
+          return contact_;
+        }
+      }
+      private com.google.protobuf.SingleFieldBuilder<
+          it.sayservice.services.universiadi2013.data.message.Data.Contact, it.sayservice.services.universiadi2013.data.message.Data.Contact.Builder, it.sayservice.services.universiadi2013.data.message.Data.ContactOrBuilder> 
+          getContactFieldBuilder() {
+        if (contactBuilder_ == null) {
+          contactBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              it.sayservice.services.universiadi2013.data.message.Data.Contact, it.sayservice.services.universiadi2013.data.message.Data.Contact.Builder, it.sayservice.services.universiadi2013.data.message.Data.ContactOrBuilder>(
+                  contact_,
+                  getParentForChildren(),
+                  isClean());
+          contact_ = null;
+        }
+        return contactBuilder_;
       }
       
       // optional string url = 8;
@@ -9297,39 +9404,171 @@ public final class Data {
         onChanged();
       }
       
-      // optional string eventId = 11;
-      private java.lang.Object eventId_ = "";
-      public boolean hasEventId() {
-        return ((bitField0_ & 0x00000400) == 0x00000400);
+      // repeated string eventId = 11;
+      private com.google.protobuf.LazyStringList eventId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureEventIdIsMutable() {
+        if (!((bitField0_ & 0x00000400) == 0x00000400)) {
+          eventId_ = new com.google.protobuf.LazyStringArrayList(eventId_);
+          bitField0_ |= 0x00000400;
+         }
       }
-      public String getEventId() {
-        java.lang.Object ref = eventId_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-          eventId_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
+      public java.util.List<String>
+          getEventIdList() {
+        return java.util.Collections.unmodifiableList(eventId_);
       }
-      public Builder setEventId(String value) {
+      public int getEventIdCount() {
+        return eventId_.size();
+      }
+      public String getEventId(int index) {
+        return eventId_.get(index);
+      }
+      public Builder setEventId(
+          int index, String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000400;
-        eventId_ = value;
+  ensureEventIdIsMutable();
+        eventId_.set(index, value);
+        onChanged();
+        return this;
+      }
+      public Builder addEventId(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEventIdIsMutable();
+        eventId_.add(value);
+        onChanged();
+        return this;
+      }
+      public Builder addAllEventId(
+          java.lang.Iterable<String> values) {
+        ensureEventIdIsMutable();
+        super.addAll(values, eventId_);
         onChanged();
         return this;
       }
       public Builder clearEventId() {
+        eventId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000400);
-        eventId_ = getDefaultInstance().getEventId();
         onChanged();
         return this;
       }
-      void setEventId(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000400;
-        eventId_ = value;
+      void addEventId(com.google.protobuf.ByteString value) {
+        ensureEventIdIsMutable();
+        eventId_.add(value);
+        onChanged();
+      }
+      
+      // repeated string sports = 12;
+      private com.google.protobuf.LazyStringList sports_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureSportsIsMutable() {
+        if (!((bitField0_ & 0x00000800) == 0x00000800)) {
+          sports_ = new com.google.protobuf.LazyStringArrayList(sports_);
+          bitField0_ |= 0x00000800;
+         }
+      }
+      public java.util.List<String>
+          getSportsList() {
+        return java.util.Collections.unmodifiableList(sports_);
+      }
+      public int getSportsCount() {
+        return sports_.size();
+      }
+      public String getSports(int index) {
+        return sports_.get(index);
+      }
+      public Builder setSports(
+          int index, String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureSportsIsMutable();
+        sports_.set(index, value);
+        onChanged();
+        return this;
+      }
+      public Builder addSports(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureSportsIsMutable();
+        sports_.add(value);
+        onChanged();
+        return this;
+      }
+      public Builder addAllSports(
+          java.lang.Iterable<String> values) {
+        ensureSportsIsMutable();
+        super.addAll(values, sports_);
+        onChanged();
+        return this;
+      }
+      public Builder clearSports() {
+        sports_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000800);
+        onChanged();
+        return this;
+      }
+      void addSports(com.google.protobuf.ByteString value) {
+        ensureSportsIsMutable();
+        sports_.add(value);
+        onChanged();
+      }
+      
+      // repeated string tags = 13;
+      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureTagsIsMutable() {
+        if (!((bitField0_ & 0x00001000) == 0x00001000)) {
+          tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+          bitField0_ |= 0x00001000;
+         }
+      }
+      public java.util.List<String>
+          getTagsList() {
+        return java.util.Collections.unmodifiableList(tags_);
+      }
+      public int getTagsCount() {
+        return tags_.size();
+      }
+      public String getTags(int index) {
+        return tags_.get(index);
+      }
+      public Builder setTags(
+          int index, String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.set(index, value);
+        onChanged();
+        return this;
+      }
+      public Builder addTags(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+      public Builder addAllTags(
+          java.lang.Iterable<String> values) {
+        ensureTagsIsMutable();
+        super.addAll(values, tags_);
+        onChanged();
+        return this;
+      }
+      public Builder clearTags() {
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00001000);
+        onChanged();
+        return this;
+      }
+      void addTags(com.google.protobuf.ByteString value) {
+        ensureTagsIsMutable();
+        tags_.add(value);
         onChanged();
       }
       
@@ -9398,17 +9637,32 @@ public final class Data {
     it.sayservice.services.universiadi2013.data.message.Data.Contact getContact();
     it.sayservice.services.universiadi2013.data.message.Data.ContactOrBuilder getContactOrBuilder();
     
-    // optional string url = 9;
+    // optional .it.sayservice.services.universiadi2013.data.message.Location location = 9;
+    boolean hasLocation();
+    it.sayservice.services.universiadi2013.data.message.Data.Location getLocation();
+    it.sayservice.services.universiadi2013.data.message.Data.LocationOrBuilder getLocationOrBuilder();
+    
+    // optional string url = 10;
     boolean hasUrl();
     String getUrl();
     
-    // optional string imageUrl = 10;
+    // optional string imageUrl = 11;
     boolean hasImageUrl();
     String getImageUrl();
     
-    // optional string poiId = 11;
+    // optional string poiId = 12;
     boolean hasPoiId();
     String getPoiId();
+    
+    // repeated string sports = 13;
+    java.util.List<String> getSportsList();
+    int getSportsCount();
+    String getSports(int index);
+    
+    // repeated string tags = 14;
+    java.util.List<String> getTagsList();
+    int getTagsCount();
+    String getTags(int index);
   }
   public static final class Event extends
       com.google.protobuf.GeneratedMessage
@@ -9643,11 +9897,24 @@ public final class Data {
       return contact_;
     }
     
-    // optional string url = 9;
-    public static final int URL_FIELD_NUMBER = 9;
+    // optional .it.sayservice.services.universiadi2013.data.message.Location location = 9;
+    public static final int LOCATION_FIELD_NUMBER = 9;
+    private it.sayservice.services.universiadi2013.data.message.Data.Location location_;
+    public boolean hasLocation() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    public it.sayservice.services.universiadi2013.data.message.Data.Location getLocation() {
+      return location_;
+    }
+    public it.sayservice.services.universiadi2013.data.message.Data.LocationOrBuilder getLocationOrBuilder() {
+      return location_;
+    }
+    
+    // optional string url = 10;
+    public static final int URL_FIELD_NUMBER = 10;
     private java.lang.Object url_;
     public boolean hasUrl() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
+      return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     public String getUrl() {
       java.lang.Object ref = url_;
@@ -9675,11 +9942,11 @@ public final class Data {
       }
     }
     
-    // optional string imageUrl = 10;
-    public static final int IMAGEURL_FIELD_NUMBER = 10;
+    // optional string imageUrl = 11;
+    public static final int IMAGEURL_FIELD_NUMBER = 11;
     private java.lang.Object imageUrl_;
     public boolean hasImageUrl() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
+      return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     public String getImageUrl() {
       java.lang.Object ref = imageUrl_;
@@ -9707,11 +9974,11 @@ public final class Data {
       }
     }
     
-    // optional string poiId = 11;
-    public static final int POIID_FIELD_NUMBER = 11;
+    // optional string poiId = 12;
+    public static final int POIID_FIELD_NUMBER = 12;
     private java.lang.Object poiId_;
     public boolean hasPoiId() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
+      return ((bitField0_ & 0x00000100) == 0x00000100);
     }
     public String getPoiId() {
       java.lang.Object ref = poiId_;
@@ -9739,6 +10006,34 @@ public final class Data {
       }
     }
     
+    // repeated string sports = 13;
+    public static final int SPORTS_FIELD_NUMBER = 13;
+    private com.google.protobuf.LazyStringList sports_;
+    public java.util.List<String>
+        getSportsList() {
+      return sports_;
+    }
+    public int getSportsCount() {
+      return sports_.size();
+    }
+    public String getSports(int index) {
+      return sports_.get(index);
+    }
+    
+    // repeated string tags = 14;
+    public static final int TAGS_FIELD_NUMBER = 14;
+    private com.google.protobuf.LazyStringList tags_;
+    public java.util.List<String>
+        getTagsList() {
+      return tags_;
+    }
+    public int getTagsCount() {
+      return tags_.size();
+    }
+    public String getTags(int index) {
+      return tags_.get(index);
+    }
+    
     private void initFields() {
       id_ = "";
       title_ = java.util.Collections.emptyList();
@@ -9748,9 +10043,12 @@ public final class Data {
       startDate_ = "";
       endDate_ = "";
       contact_ = it.sayservice.services.universiadi2013.data.message.Data.Contact.getDefaultInstance();
+      location_ = it.sayservice.services.universiadi2013.data.message.Data.Location.getDefaultInstance();
       url_ = "";
       imageUrl_ = "";
       poiId_ = "";
+      sports_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -9797,6 +10095,12 @@ public final class Data {
           return false;
         }
       }
+      if (hasLocation()) {
+        if (!getLocation().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -9829,13 +10133,22 @@ public final class Data {
         output.writeMessage(8, contact_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeBytes(9, getUrlBytes());
+        output.writeMessage(9, location_);
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        output.writeBytes(10, getImageUrlBytes());
+        output.writeBytes(10, getUrlBytes());
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        output.writeBytes(11, getPoiIdBytes());
+        output.writeBytes(11, getImageUrlBytes());
+      }
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        output.writeBytes(12, getPoiIdBytes());
+      }
+      for (int i = 0; i < sports_.size(); i++) {
+        output.writeBytes(13, sports_.getByteString(i));
+      }
+      for (int i = 0; i < tags_.size(); i++) {
+        output.writeBytes(14, tags_.getByteString(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -9880,15 +10193,37 @@ public final class Data {
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(9, getUrlBytes());
+          .computeMessageSize(9, location_);
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(10, getImageUrlBytes());
+          .computeBytesSize(10, getUrlBytes());
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(11, getPoiIdBytes());
+          .computeBytesSize(11, getImageUrlBytes());
+      }
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(12, getPoiIdBytes());
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < sports_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(sports_.getByteString(i));
+        }
+        size += dataSize;
+        size += 1 * getSportsList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < tags_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(tags_.getByteString(i));
+        }
+        size += dataSize;
+        size += 1 * getTagsList().size();
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -10010,6 +10345,7 @@ public final class Data {
           getShortDescFieldBuilder();
           getLongDescFieldBuilder();
           getContactFieldBuilder();
+          getLocationFieldBuilder();
         }
       }
       private static Builder create() {
@@ -10050,12 +10386,22 @@ public final class Data {
           contactBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000080);
-        url_ = "";
+        if (locationBuilder_ == null) {
+          location_ = it.sayservice.services.universiadi2013.data.message.Data.Location.getDefaultInstance();
+        } else {
+          locationBuilder_.clear();
+        }
         bitField0_ = (bitField0_ & ~0x00000100);
-        imageUrl_ = "";
+        url_ = "";
         bitField0_ = (bitField0_ & ~0x00000200);
-        poiId_ = "";
+        imageUrl_ = "";
         bitField0_ = (bitField0_ & ~0x00000400);
+        poiId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000800);
+        sports_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00001000);
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00002000);
         return this;
       }
       
@@ -10148,15 +10494,35 @@ public final class Data {
         if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
           to_bitField0_ |= 0x00000020;
         }
-        result.url_ = url_;
+        if (locationBuilder_ == null) {
+          result.location_ = location_;
+        } else {
+          result.location_ = locationBuilder_.build();
+        }
         if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
           to_bitField0_ |= 0x00000040;
         }
-        result.imageUrl_ = imageUrl_;
+        result.url_ = url_;
         if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
           to_bitField0_ |= 0x00000080;
         }
+        result.imageUrl_ = imageUrl_;
+        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
+          to_bitField0_ |= 0x00000100;
+        }
         result.poiId_ = poiId_;
+        if (((bitField0_ & 0x00001000) == 0x00001000)) {
+          sports_ = new com.google.protobuf.UnmodifiableLazyStringList(
+              sports_);
+          bitField0_ = (bitField0_ & ~0x00001000);
+        }
+        result.sports_ = sports_;
+        if (((bitField0_ & 0x00002000) == 0x00002000)) {
+          tags_ = new com.google.protobuf.UnmodifiableLazyStringList(
+              tags_);
+          bitField0_ = (bitField0_ & ~0x00002000);
+        }
+        result.tags_ = tags_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -10266,6 +10632,9 @@ public final class Data {
         if (other.hasContact()) {
           mergeContact(other.getContact());
         }
+        if (other.hasLocation()) {
+          mergeLocation(other.getLocation());
+        }
         if (other.hasUrl()) {
           setUrl(other.getUrl());
         }
@@ -10274,6 +10643,26 @@ public final class Data {
         }
         if (other.hasPoiId()) {
           setPoiId(other.getPoiId());
+        }
+        if (!other.sports_.isEmpty()) {
+          if (sports_.isEmpty()) {
+            sports_ = other.sports_;
+            bitField0_ = (bitField0_ & ~0x00001000);
+          } else {
+            ensureSportsIsMutable();
+            sports_.addAll(other.sports_);
+          }
+          onChanged();
+        }
+        if (!other.tags_.isEmpty()) {
+          if (tags_.isEmpty()) {
+            tags_ = other.tags_;
+            bitField0_ = (bitField0_ & ~0x00002000);
+          } else {
+            ensureTagsIsMutable();
+            tags_.addAll(other.tags_);
+          }
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -10316,6 +10705,12 @@ public final class Data {
         }
         if (hasContact()) {
           if (!getContact().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasLocation()) {
+          if (!getLocation().isInitialized()) {
             
             return false;
           }
@@ -10394,18 +10789,37 @@ public final class Data {
               break;
             }
             case 74: {
-              bitField0_ |= 0x00000100;
-              url_ = input.readBytes();
+              it.sayservice.services.universiadi2013.data.message.Data.Location.Builder subBuilder = it.sayservice.services.universiadi2013.data.message.Data.Location.newBuilder();
+              if (hasLocation()) {
+                subBuilder.mergeFrom(getLocation());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setLocation(subBuilder.buildPartial());
               break;
             }
             case 82: {
               bitField0_ |= 0x00000200;
-              imageUrl_ = input.readBytes();
+              url_ = input.readBytes();
               break;
             }
             case 90: {
               bitField0_ |= 0x00000400;
+              imageUrl_ = input.readBytes();
+              break;
+            }
+            case 98: {
+              bitField0_ |= 0x00000800;
               poiId_ = input.readBytes();
+              break;
+            }
+            case 106: {
+              ensureSportsIsMutable();
+              sports_.add(input.readBytes());
+              break;
+            }
+            case 114: {
+              ensureTagsIsMutable();
+              tags_.add(input.readBytes());
               break;
             }
           }
@@ -11206,10 +11620,100 @@ public final class Data {
         return contactBuilder_;
       }
       
-      // optional string url = 9;
+      // optional .it.sayservice.services.universiadi2013.data.message.Location location = 9;
+      private it.sayservice.services.universiadi2013.data.message.Data.Location location_ = it.sayservice.services.universiadi2013.data.message.Data.Location.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          it.sayservice.services.universiadi2013.data.message.Data.Location, it.sayservice.services.universiadi2013.data.message.Data.Location.Builder, it.sayservice.services.universiadi2013.data.message.Data.LocationOrBuilder> locationBuilder_;
+      public boolean hasLocation() {
+        return ((bitField0_ & 0x00000100) == 0x00000100);
+      }
+      public it.sayservice.services.universiadi2013.data.message.Data.Location getLocation() {
+        if (locationBuilder_ == null) {
+          return location_;
+        } else {
+          return locationBuilder_.getMessage();
+        }
+      }
+      public Builder setLocation(it.sayservice.services.universiadi2013.data.message.Data.Location value) {
+        if (locationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          location_ = value;
+          onChanged();
+        } else {
+          locationBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000100;
+        return this;
+      }
+      public Builder setLocation(
+          it.sayservice.services.universiadi2013.data.message.Data.Location.Builder builderForValue) {
+        if (locationBuilder_ == null) {
+          location_ = builderForValue.build();
+          onChanged();
+        } else {
+          locationBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000100;
+        return this;
+      }
+      public Builder mergeLocation(it.sayservice.services.universiadi2013.data.message.Data.Location value) {
+        if (locationBuilder_ == null) {
+          if (((bitField0_ & 0x00000100) == 0x00000100) &&
+              location_ != it.sayservice.services.universiadi2013.data.message.Data.Location.getDefaultInstance()) {
+            location_ =
+              it.sayservice.services.universiadi2013.data.message.Data.Location.newBuilder(location_).mergeFrom(value).buildPartial();
+          } else {
+            location_ = value;
+          }
+          onChanged();
+        } else {
+          locationBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000100;
+        return this;
+      }
+      public Builder clearLocation() {
+        if (locationBuilder_ == null) {
+          location_ = it.sayservice.services.universiadi2013.data.message.Data.Location.getDefaultInstance();
+          onChanged();
+        } else {
+          locationBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000100);
+        return this;
+      }
+      public it.sayservice.services.universiadi2013.data.message.Data.Location.Builder getLocationBuilder() {
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return getLocationFieldBuilder().getBuilder();
+      }
+      public it.sayservice.services.universiadi2013.data.message.Data.LocationOrBuilder getLocationOrBuilder() {
+        if (locationBuilder_ != null) {
+          return locationBuilder_.getMessageOrBuilder();
+        } else {
+          return location_;
+        }
+      }
+      private com.google.protobuf.SingleFieldBuilder<
+          it.sayservice.services.universiadi2013.data.message.Data.Location, it.sayservice.services.universiadi2013.data.message.Data.Location.Builder, it.sayservice.services.universiadi2013.data.message.Data.LocationOrBuilder> 
+          getLocationFieldBuilder() {
+        if (locationBuilder_ == null) {
+          locationBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              it.sayservice.services.universiadi2013.data.message.Data.Location, it.sayservice.services.universiadi2013.data.message.Data.Location.Builder, it.sayservice.services.universiadi2013.data.message.Data.LocationOrBuilder>(
+                  location_,
+                  getParentForChildren(),
+                  isClean());
+          location_ = null;
+        }
+        return locationBuilder_;
+      }
+      
+      // optional string url = 10;
       private java.lang.Object url_ = "";
       public boolean hasUrl() {
-        return ((bitField0_ & 0x00000100) == 0x00000100);
+        return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       public String getUrl() {
         java.lang.Object ref = url_;
@@ -11225,27 +11729,27 @@ public final class Data {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000100;
+  bitField0_ |= 0x00000200;
         url_ = value;
         onChanged();
         return this;
       }
       public Builder clearUrl() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
         url_ = getDefaultInstance().getUrl();
         onChanged();
         return this;
       }
       void setUrl(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         url_ = value;
         onChanged();
       }
       
-      // optional string imageUrl = 10;
+      // optional string imageUrl = 11;
       private java.lang.Object imageUrl_ = "";
       public boolean hasImageUrl() {
-        return ((bitField0_ & 0x00000200) == 0x00000200);
+        return ((bitField0_ & 0x00000400) == 0x00000400);
       }
       public String getImageUrl() {
         java.lang.Object ref = imageUrl_;
@@ -11261,27 +11765,27 @@ public final class Data {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000200;
+  bitField0_ |= 0x00000400;
         imageUrl_ = value;
         onChanged();
         return this;
       }
       public Builder clearImageUrl() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         imageUrl_ = getDefaultInstance().getImageUrl();
         onChanged();
         return this;
       }
       void setImageUrl(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         imageUrl_ = value;
         onChanged();
       }
       
-      // optional string poiId = 11;
+      // optional string poiId = 12;
       private java.lang.Object poiId_ = "";
       public boolean hasPoiId() {
-        return ((bitField0_ & 0x00000400) == 0x00000400);
+        return ((bitField0_ & 0x00000800) == 0x00000800);
       }
       public String getPoiId() {
         java.lang.Object ref = poiId_;
@@ -11297,20 +11801,132 @@ public final class Data {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000400;
+  bitField0_ |= 0x00000800;
         poiId_ = value;
         onChanged();
         return this;
       }
       public Builder clearPoiId() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         poiId_ = getDefaultInstance().getPoiId();
         onChanged();
         return this;
       }
       void setPoiId(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         poiId_ = value;
+        onChanged();
+      }
+      
+      // repeated string sports = 13;
+      private com.google.protobuf.LazyStringList sports_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureSportsIsMutable() {
+        if (!((bitField0_ & 0x00001000) == 0x00001000)) {
+          sports_ = new com.google.protobuf.LazyStringArrayList(sports_);
+          bitField0_ |= 0x00001000;
+         }
+      }
+      public java.util.List<String>
+          getSportsList() {
+        return java.util.Collections.unmodifiableList(sports_);
+      }
+      public int getSportsCount() {
+        return sports_.size();
+      }
+      public String getSports(int index) {
+        return sports_.get(index);
+      }
+      public Builder setSports(
+          int index, String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureSportsIsMutable();
+        sports_.set(index, value);
+        onChanged();
+        return this;
+      }
+      public Builder addSports(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureSportsIsMutable();
+        sports_.add(value);
+        onChanged();
+        return this;
+      }
+      public Builder addAllSports(
+          java.lang.Iterable<String> values) {
+        ensureSportsIsMutable();
+        super.addAll(values, sports_);
+        onChanged();
+        return this;
+      }
+      public Builder clearSports() {
+        sports_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00001000);
+        onChanged();
+        return this;
+      }
+      void addSports(com.google.protobuf.ByteString value) {
+        ensureSportsIsMutable();
+        sports_.add(value);
+        onChanged();
+      }
+      
+      // repeated string tags = 14;
+      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureTagsIsMutable() {
+        if (!((bitField0_ & 0x00002000) == 0x00002000)) {
+          tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+          bitField0_ |= 0x00002000;
+         }
+      }
+      public java.util.List<String>
+          getTagsList() {
+        return java.util.Collections.unmodifiableList(tags_);
+      }
+      public int getTagsCount() {
+        return tags_.size();
+      }
+      public String getTags(int index) {
+        return tags_.get(index);
+      }
+      public Builder setTags(
+          int index, String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.set(index, value);
+        onChanged();
+        return this;
+      }
+      public Builder addTags(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+      public Builder addAllTags(
+          java.lang.Iterable<String> values) {
+        ensureTagsIsMutable();
+        super.addAll(values, tags_);
+        onChanged();
+        return this;
+      }
+      public Builder clearTags() {
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00002000);
+        onChanged();
+        return this;
+      }
+      void addTags(com.google.protobuf.ByteString value) {
+        ensureTagsIsMutable();
+        tags_.add(value);
         onChanged();
       }
       
@@ -11346,15 +11962,29 @@ public final class Data {
     it.sayservice.services.universiadi2013.data.message.Data.KeyValueOrBuilder getNameOrBuilder(
         int index);
     
-    // required .it.sayservice.services.universiadi2013.data.message.Location location = 4;
+    // repeated .it.sayservice.services.universiadi2013.data.message.KeyValue description = 4;
+    java.util.List<it.sayservice.services.universiadi2013.data.message.Data.KeyValue> 
+        getDescriptionList();
+    it.sayservice.services.universiadi2013.data.message.Data.KeyValue getDescription(int index);
+    int getDescriptionCount();
+    java.util.List<? extends it.sayservice.services.universiadi2013.data.message.Data.KeyValueOrBuilder> 
+        getDescriptionOrBuilderList();
+    it.sayservice.services.universiadi2013.data.message.Data.KeyValueOrBuilder getDescriptionOrBuilder(
+        int index);
+    
+    // required .it.sayservice.services.universiadi2013.data.message.Location location = 5;
     boolean hasLocation();
     it.sayservice.services.universiadi2013.data.message.Data.Location getLocation();
     it.sayservice.services.universiadi2013.data.message.Data.LocationOrBuilder getLocationOrBuilder();
     
-    // repeated string tag = 5;
+    // repeated string tag = 6;
     java.util.List<String> getTagList();
     int getTagCount();
     String getTag(int index);
+    
+    // optional string imageUrl = 7;
+    boolean hasImageUrl();
+    String getImageUrl();
   }
   public static final class Venue extends
       com.google.protobuf.GeneratedMessage
@@ -11470,8 +12100,29 @@ public final class Data {
       return name_.get(index);
     }
     
-    // required .it.sayservice.services.universiadi2013.data.message.Location location = 4;
-    public static final int LOCATION_FIELD_NUMBER = 4;
+    // repeated .it.sayservice.services.universiadi2013.data.message.KeyValue description = 4;
+    public static final int DESCRIPTION_FIELD_NUMBER = 4;
+    private java.util.List<it.sayservice.services.universiadi2013.data.message.Data.KeyValue> description_;
+    public java.util.List<it.sayservice.services.universiadi2013.data.message.Data.KeyValue> getDescriptionList() {
+      return description_;
+    }
+    public java.util.List<? extends it.sayservice.services.universiadi2013.data.message.Data.KeyValueOrBuilder> 
+        getDescriptionOrBuilderList() {
+      return description_;
+    }
+    public int getDescriptionCount() {
+      return description_.size();
+    }
+    public it.sayservice.services.universiadi2013.data.message.Data.KeyValue getDescription(int index) {
+      return description_.get(index);
+    }
+    public it.sayservice.services.universiadi2013.data.message.Data.KeyValueOrBuilder getDescriptionOrBuilder(
+        int index) {
+      return description_.get(index);
+    }
+    
+    // required .it.sayservice.services.universiadi2013.data.message.Location location = 5;
+    public static final int LOCATION_FIELD_NUMBER = 5;
     private it.sayservice.services.universiadi2013.data.message.Data.Location location_;
     public boolean hasLocation() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
@@ -11483,8 +12134,8 @@ public final class Data {
       return location_;
     }
     
-    // repeated string tag = 5;
-    public static final int TAG_FIELD_NUMBER = 5;
+    // repeated string tag = 6;
+    public static final int TAG_FIELD_NUMBER = 6;
     private com.google.protobuf.LazyStringList tag_;
     public java.util.List<String>
         getTagList() {
@@ -11497,12 +12148,46 @@ public final class Data {
       return tag_.get(index);
     }
     
+    // optional string imageUrl = 7;
+    public static final int IMAGEURL_FIELD_NUMBER = 7;
+    private java.lang.Object imageUrl_;
+    public boolean hasImageUrl() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    public String getImageUrl() {
+      java.lang.Object ref = imageUrl_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          imageUrl_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getImageUrlBytes() {
+      java.lang.Object ref = imageUrl_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        imageUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
     private void initFields() {
       id_ = "";
       category_ = "";
       name_ = java.util.Collections.emptyList();
+      description_ = java.util.Collections.emptyList();
       location_ = it.sayservice.services.universiadi2013.data.message.Data.Location.getDefaultInstance();
       tag_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      imageUrl_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -11527,6 +12212,12 @@ public final class Data {
           return false;
         }
       }
+      for (int i = 0; i < getDescriptionCount(); i++) {
+        if (!getDescription(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
       if (!getLocation().isInitialized()) {
         memoizedIsInitialized = 0;
         return false;
@@ -11547,11 +12238,17 @@ public final class Data {
       for (int i = 0; i < name_.size(); i++) {
         output.writeMessage(3, name_.get(i));
       }
+      for (int i = 0; i < description_.size(); i++) {
+        output.writeMessage(4, description_.get(i));
+      }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeMessage(4, location_);
+        output.writeMessage(5, location_);
       }
       for (int i = 0; i < tag_.size(); i++) {
-        output.writeBytes(5, tag_.getByteString(i));
+        output.writeBytes(6, tag_.getByteString(i));
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(7, getImageUrlBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -11574,9 +12271,13 @@ public final class Data {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, name_.get(i));
       }
+      for (int i = 0; i < description_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, description_.get(i));
+      }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, location_);
+          .computeMessageSize(5, location_);
       }
       {
         int dataSize = 0;
@@ -11586,6 +12287,10 @@ public final class Data {
         }
         size += dataSize;
         size += 1 * getTagList().size();
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(7, getImageUrlBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -11704,6 +12409,7 @@ public final class Data {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
           getNameFieldBuilder();
+          getDescriptionFieldBuilder();
           getLocationFieldBuilder();
         }
       }
@@ -11723,14 +12429,22 @@ public final class Data {
         } else {
           nameBuilder_.clear();
         }
+        if (descriptionBuilder_ == null) {
+          description_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          descriptionBuilder_.clear();
+        }
         if (locationBuilder_ == null) {
           location_ = it.sayservice.services.universiadi2013.data.message.Data.Location.getDefaultInstance();
         } else {
           locationBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
-        tag_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000010);
+        tag_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        imageUrl_ = "";
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
       
@@ -11786,7 +12500,16 @@ public final class Data {
         } else {
           result.name_ = nameBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+        if (descriptionBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+            description_ = java.util.Collections.unmodifiableList(description_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.description_ = description_;
+        } else {
+          result.description_ = descriptionBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000004;
         }
         if (locationBuilder_ == null) {
@@ -11794,12 +12517,16 @@ public final class Data {
         } else {
           result.location_ = locationBuilder_.build();
         }
-        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((bitField0_ & 0x00000020) == 0x00000020)) {
           tag_ = new com.google.protobuf.UnmodifiableLazyStringList(
               tag_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.tag_ = tag_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.imageUrl_ = imageUrl_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -11848,18 +12575,47 @@ public final class Data {
             }
           }
         }
+        if (descriptionBuilder_ == null) {
+          if (!other.description_.isEmpty()) {
+            if (description_.isEmpty()) {
+              description_ = other.description_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+            } else {
+              ensureDescriptionIsMutable();
+              description_.addAll(other.description_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.description_.isEmpty()) {
+            if (descriptionBuilder_.isEmpty()) {
+              descriptionBuilder_.dispose();
+              descriptionBuilder_ = null;
+              description_ = other.description_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+              descriptionBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getDescriptionFieldBuilder() : null;
+            } else {
+              descriptionBuilder_.addAllMessages(other.description_);
+            }
+          }
+        }
         if (other.hasLocation()) {
           mergeLocation(other.getLocation());
         }
         if (!other.tag_.isEmpty()) {
           if (tag_.isEmpty()) {
             tag_ = other.tag_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureTagIsMutable();
             tag_.addAll(other.tag_);
           }
           onChanged();
+        }
+        if (other.hasImageUrl()) {
+          setImageUrl(other.getImageUrl());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -11880,6 +12636,12 @@ public final class Data {
         }
         for (int i = 0; i < getNameCount(); i++) {
           if (!getName(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        for (int i = 0; i < getDescriptionCount(); i++) {
+          if (!getDescription(i).isInitialized()) {
             
             return false;
           }
@@ -11931,6 +12693,12 @@ public final class Data {
               break;
             }
             case 34: {
+              it.sayservice.services.universiadi2013.data.message.Data.KeyValue.Builder subBuilder = it.sayservice.services.universiadi2013.data.message.Data.KeyValue.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addDescription(subBuilder.buildPartial());
+              break;
+            }
+            case 42: {
               it.sayservice.services.universiadi2013.data.message.Data.Location.Builder subBuilder = it.sayservice.services.universiadi2013.data.message.Data.Location.newBuilder();
               if (hasLocation()) {
                 subBuilder.mergeFrom(getLocation());
@@ -11939,9 +12707,14 @@ public final class Data {
               setLocation(subBuilder.buildPartial());
               break;
             }
-            case 42: {
+            case 50: {
               ensureTagIsMutable();
               tag_.add(input.readBytes());
+              break;
+            }
+            case 58: {
+              bitField0_ |= 0x00000040;
+              imageUrl_ = input.readBytes();
               break;
             }
           }
@@ -12208,12 +12981,198 @@ public final class Data {
         return nameBuilder_;
       }
       
-      // required .it.sayservice.services.universiadi2013.data.message.Location location = 4;
+      // repeated .it.sayservice.services.universiadi2013.data.message.KeyValue description = 4;
+      private java.util.List<it.sayservice.services.universiadi2013.data.message.Data.KeyValue> description_ =
+        java.util.Collections.emptyList();
+      private void ensureDescriptionIsMutable() {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+          description_ = new java.util.ArrayList<it.sayservice.services.universiadi2013.data.message.Data.KeyValue>(description_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+      
+      private com.google.protobuf.RepeatedFieldBuilder<
+          it.sayservice.services.universiadi2013.data.message.Data.KeyValue, it.sayservice.services.universiadi2013.data.message.Data.KeyValue.Builder, it.sayservice.services.universiadi2013.data.message.Data.KeyValueOrBuilder> descriptionBuilder_;
+      
+      public java.util.List<it.sayservice.services.universiadi2013.data.message.Data.KeyValue> getDescriptionList() {
+        if (descriptionBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(description_);
+        } else {
+          return descriptionBuilder_.getMessageList();
+        }
+      }
+      public int getDescriptionCount() {
+        if (descriptionBuilder_ == null) {
+          return description_.size();
+        } else {
+          return descriptionBuilder_.getCount();
+        }
+      }
+      public it.sayservice.services.universiadi2013.data.message.Data.KeyValue getDescription(int index) {
+        if (descriptionBuilder_ == null) {
+          return description_.get(index);
+        } else {
+          return descriptionBuilder_.getMessage(index);
+        }
+      }
+      public Builder setDescription(
+          int index, it.sayservice.services.universiadi2013.data.message.Data.KeyValue value) {
+        if (descriptionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDescriptionIsMutable();
+          description_.set(index, value);
+          onChanged();
+        } else {
+          descriptionBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      public Builder setDescription(
+          int index, it.sayservice.services.universiadi2013.data.message.Data.KeyValue.Builder builderForValue) {
+        if (descriptionBuilder_ == null) {
+          ensureDescriptionIsMutable();
+          description_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          descriptionBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addDescription(it.sayservice.services.universiadi2013.data.message.Data.KeyValue value) {
+        if (descriptionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDescriptionIsMutable();
+          description_.add(value);
+          onChanged();
+        } else {
+          descriptionBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      public Builder addDescription(
+          int index, it.sayservice.services.universiadi2013.data.message.Data.KeyValue value) {
+        if (descriptionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDescriptionIsMutable();
+          description_.add(index, value);
+          onChanged();
+        } else {
+          descriptionBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      public Builder addDescription(
+          it.sayservice.services.universiadi2013.data.message.Data.KeyValue.Builder builderForValue) {
+        if (descriptionBuilder_ == null) {
+          ensureDescriptionIsMutable();
+          description_.add(builderForValue.build());
+          onChanged();
+        } else {
+          descriptionBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addDescription(
+          int index, it.sayservice.services.universiadi2013.data.message.Data.KeyValue.Builder builderForValue) {
+        if (descriptionBuilder_ == null) {
+          ensureDescriptionIsMutable();
+          description_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          descriptionBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addAllDescription(
+          java.lang.Iterable<? extends it.sayservice.services.universiadi2013.data.message.Data.KeyValue> values) {
+        if (descriptionBuilder_ == null) {
+          ensureDescriptionIsMutable();
+          super.addAll(values, description_);
+          onChanged();
+        } else {
+          descriptionBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      public Builder clearDescription() {
+        if (descriptionBuilder_ == null) {
+          description_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+        } else {
+          descriptionBuilder_.clear();
+        }
+        return this;
+      }
+      public Builder removeDescription(int index) {
+        if (descriptionBuilder_ == null) {
+          ensureDescriptionIsMutable();
+          description_.remove(index);
+          onChanged();
+        } else {
+          descriptionBuilder_.remove(index);
+        }
+        return this;
+      }
+      public it.sayservice.services.universiadi2013.data.message.Data.KeyValue.Builder getDescriptionBuilder(
+          int index) {
+        return getDescriptionFieldBuilder().getBuilder(index);
+      }
+      public it.sayservice.services.universiadi2013.data.message.Data.KeyValueOrBuilder getDescriptionOrBuilder(
+          int index) {
+        if (descriptionBuilder_ == null) {
+          return description_.get(index);  } else {
+          return descriptionBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      public java.util.List<? extends it.sayservice.services.universiadi2013.data.message.Data.KeyValueOrBuilder> 
+           getDescriptionOrBuilderList() {
+        if (descriptionBuilder_ != null) {
+          return descriptionBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(description_);
+        }
+      }
+      public it.sayservice.services.universiadi2013.data.message.Data.KeyValue.Builder addDescriptionBuilder() {
+        return getDescriptionFieldBuilder().addBuilder(
+            it.sayservice.services.universiadi2013.data.message.Data.KeyValue.getDefaultInstance());
+      }
+      public it.sayservice.services.universiadi2013.data.message.Data.KeyValue.Builder addDescriptionBuilder(
+          int index) {
+        return getDescriptionFieldBuilder().addBuilder(
+            index, it.sayservice.services.universiadi2013.data.message.Data.KeyValue.getDefaultInstance());
+      }
+      public java.util.List<it.sayservice.services.universiadi2013.data.message.Data.KeyValue.Builder> 
+           getDescriptionBuilderList() {
+        return getDescriptionFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          it.sayservice.services.universiadi2013.data.message.Data.KeyValue, it.sayservice.services.universiadi2013.data.message.Data.KeyValue.Builder, it.sayservice.services.universiadi2013.data.message.Data.KeyValueOrBuilder> 
+          getDescriptionFieldBuilder() {
+        if (descriptionBuilder_ == null) {
+          descriptionBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              it.sayservice.services.universiadi2013.data.message.Data.KeyValue, it.sayservice.services.universiadi2013.data.message.Data.KeyValue.Builder, it.sayservice.services.universiadi2013.data.message.Data.KeyValueOrBuilder>(
+                  description_,
+                  ((bitField0_ & 0x00000008) == 0x00000008),
+                  getParentForChildren(),
+                  isClean());
+          description_ = null;
+        }
+        return descriptionBuilder_;
+      }
+      
+      // required .it.sayservice.services.universiadi2013.data.message.Location location = 5;
       private it.sayservice.services.universiadi2013.data.message.Data.Location location_ = it.sayservice.services.universiadi2013.data.message.Data.Location.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           it.sayservice.services.universiadi2013.data.message.Data.Location, it.sayservice.services.universiadi2013.data.message.Data.Location.Builder, it.sayservice.services.universiadi2013.data.message.Data.LocationOrBuilder> locationBuilder_;
       public boolean hasLocation() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       public it.sayservice.services.universiadi2013.data.message.Data.Location getLocation() {
         if (locationBuilder_ == null) {
@@ -12232,7 +13191,7 @@ public final class Data {
         } else {
           locationBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         return this;
       }
       public Builder setLocation(
@@ -12243,12 +13202,12 @@ public final class Data {
         } else {
           locationBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         return this;
       }
       public Builder mergeLocation(it.sayservice.services.universiadi2013.data.message.Data.Location value) {
         if (locationBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) == 0x00000008) &&
+          if (((bitField0_ & 0x00000010) == 0x00000010) &&
               location_ != it.sayservice.services.universiadi2013.data.message.Data.Location.getDefaultInstance()) {
             location_ =
               it.sayservice.services.universiadi2013.data.message.Data.Location.newBuilder(location_).mergeFrom(value).buildPartial();
@@ -12259,7 +13218,7 @@ public final class Data {
         } else {
           locationBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         return this;
       }
       public Builder clearLocation() {
@@ -12269,11 +13228,11 @@ public final class Data {
         } else {
           locationBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
       public it.sayservice.services.universiadi2013.data.message.Data.Location.Builder getLocationBuilder() {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return getLocationFieldBuilder().getBuilder();
       }
@@ -12298,12 +13257,12 @@ public final class Data {
         return locationBuilder_;
       }
       
-      // repeated string tag = 5;
+      // repeated string tag = 6;
       private com.google.protobuf.LazyStringList tag_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureTagIsMutable() {
-        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
           tag_ = new com.google.protobuf.LazyStringArrayList(tag_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
          }
       }
       public java.util.List<String>
@@ -12344,13 +13303,49 @@ public final class Data {
       }
       public Builder clearTag() {
         tag_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
       void addTag(com.google.protobuf.ByteString value) {
         ensureTagIsMutable();
         tag_.add(value);
+        onChanged();
+      }
+      
+      // optional string imageUrl = 7;
+      private java.lang.Object imageUrl_ = "";
+      public boolean hasImageUrl() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      public String getImageUrl() {
+        java.lang.Object ref = imageUrl_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          imageUrl_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setImageUrl(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
+        imageUrl_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearImageUrl() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        imageUrl_ = getDefaultInstance().getImageUrl();
+        onChanged();
+        return this;
+      }
+      void setImageUrl(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000040;
+        imageUrl_ = value;
         onChanged();
       }
       
@@ -12363,6 +13358,1642 @@ public final class Data {
     }
     
     // @@protoc_insertion_point(class_scope:it.sayservice.services.universiadi2013.data.message.Venue)
+  }
+  
+  public interface MedalsListOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // repeated .it.sayservice.services.universiadi2013.data.message.Medals nation = 1;
+    java.util.List<it.sayservice.services.universiadi2013.data.message.Data.Medals> 
+        getNationList();
+    it.sayservice.services.universiadi2013.data.message.Data.Medals getNation(int index);
+    int getNationCount();
+    java.util.List<? extends it.sayservice.services.universiadi2013.data.message.Data.MedalsOrBuilder> 
+        getNationOrBuilderList();
+    it.sayservice.services.universiadi2013.data.message.Data.MedalsOrBuilder getNationOrBuilder(
+        int index);
+  }
+  public static final class MedalsList extends
+      com.google.protobuf.GeneratedMessage
+      implements MedalsListOrBuilder {
+    // Use MedalsList.newBuilder() to construct.
+    private MedalsList(Builder builder) {
+      super(builder);
+    }
+    private MedalsList(boolean noInit) {}
+    
+    private static final MedalsList defaultInstance;
+    public static MedalsList getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public MedalsList getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return it.sayservice.services.universiadi2013.data.message.Data.internal_static_it_sayservice_services_universiadi2013_data_message_MedalsList_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return it.sayservice.services.universiadi2013.data.message.Data.internal_static_it_sayservice_services_universiadi2013_data_message_MedalsList_fieldAccessorTable;
+    }
+    
+    // repeated .it.sayservice.services.universiadi2013.data.message.Medals nation = 1;
+    public static final int NATION_FIELD_NUMBER = 1;
+    private java.util.List<it.sayservice.services.universiadi2013.data.message.Data.Medals> nation_;
+    public java.util.List<it.sayservice.services.universiadi2013.data.message.Data.Medals> getNationList() {
+      return nation_;
+    }
+    public java.util.List<? extends it.sayservice.services.universiadi2013.data.message.Data.MedalsOrBuilder> 
+        getNationOrBuilderList() {
+      return nation_;
+    }
+    public int getNationCount() {
+      return nation_.size();
+    }
+    public it.sayservice.services.universiadi2013.data.message.Data.Medals getNation(int index) {
+      return nation_.get(index);
+    }
+    public it.sayservice.services.universiadi2013.data.message.Data.MedalsOrBuilder getNationOrBuilder(
+        int index) {
+      return nation_.get(index);
+    }
+    
+    private void initFields() {
+      nation_ = java.util.Collections.emptyList();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      for (int i = 0; i < getNationCount(); i++) {
+        if (!getNation(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      for (int i = 0; i < nation_.size(); i++) {
+        output.writeMessage(1, nation_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      for (int i = 0; i < nation_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, nation_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static it.sayservice.services.universiadi2013.data.message.Data.MedalsList parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static it.sayservice.services.universiadi2013.data.message.Data.MedalsList parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static it.sayservice.services.universiadi2013.data.message.Data.MedalsList parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static it.sayservice.services.universiadi2013.data.message.Data.MedalsList parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static it.sayservice.services.universiadi2013.data.message.Data.MedalsList parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static it.sayservice.services.universiadi2013.data.message.Data.MedalsList parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static it.sayservice.services.universiadi2013.data.message.Data.MedalsList parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static it.sayservice.services.universiadi2013.data.message.Data.MedalsList parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static it.sayservice.services.universiadi2013.data.message.Data.MedalsList parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static it.sayservice.services.universiadi2013.data.message.Data.MedalsList parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(it.sayservice.services.universiadi2013.data.message.Data.MedalsList prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements it.sayservice.services.universiadi2013.data.message.Data.MedalsListOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return it.sayservice.services.universiadi2013.data.message.Data.internal_static_it_sayservice_services_universiadi2013_data_message_MedalsList_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return it.sayservice.services.universiadi2013.data.message.Data.internal_static_it_sayservice_services_universiadi2013_data_message_MedalsList_fieldAccessorTable;
+      }
+      
+      // Construct using it.sayservice.services.universiadi2013.data.message.Data.MedalsList.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getNationFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        if (nationBuilder_ == null) {
+          nation_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          nationBuilder_.clear();
+        }
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return it.sayservice.services.universiadi2013.data.message.Data.MedalsList.getDescriptor();
+      }
+      
+      public it.sayservice.services.universiadi2013.data.message.Data.MedalsList getDefaultInstanceForType() {
+        return it.sayservice.services.universiadi2013.data.message.Data.MedalsList.getDefaultInstance();
+      }
+      
+      public it.sayservice.services.universiadi2013.data.message.Data.MedalsList build() {
+        it.sayservice.services.universiadi2013.data.message.Data.MedalsList result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private it.sayservice.services.universiadi2013.data.message.Data.MedalsList buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        it.sayservice.services.universiadi2013.data.message.Data.MedalsList result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public it.sayservice.services.universiadi2013.data.message.Data.MedalsList buildPartial() {
+        it.sayservice.services.universiadi2013.data.message.Data.MedalsList result = new it.sayservice.services.universiadi2013.data.message.Data.MedalsList(this);
+        int from_bitField0_ = bitField0_;
+        if (nationBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            nation_ = java.util.Collections.unmodifiableList(nation_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.nation_ = nation_;
+        } else {
+          result.nation_ = nationBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof it.sayservice.services.universiadi2013.data.message.Data.MedalsList) {
+          return mergeFrom((it.sayservice.services.universiadi2013.data.message.Data.MedalsList)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(it.sayservice.services.universiadi2013.data.message.Data.MedalsList other) {
+        if (other == it.sayservice.services.universiadi2013.data.message.Data.MedalsList.getDefaultInstance()) return this;
+        if (nationBuilder_ == null) {
+          if (!other.nation_.isEmpty()) {
+            if (nation_.isEmpty()) {
+              nation_ = other.nation_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureNationIsMutable();
+              nation_.addAll(other.nation_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.nation_.isEmpty()) {
+            if (nationBuilder_.isEmpty()) {
+              nationBuilder_.dispose();
+              nationBuilder_ = null;
+              nation_ = other.nation_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              nationBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getNationFieldBuilder() : null;
+            } else {
+              nationBuilder_.addAllMessages(other.nation_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        for (int i = 0; i < getNationCount(); i++) {
+          if (!getNation(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              it.sayservice.services.universiadi2013.data.message.Data.Medals.Builder subBuilder = it.sayservice.services.universiadi2013.data.message.Data.Medals.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addNation(subBuilder.buildPartial());
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // repeated .it.sayservice.services.universiadi2013.data.message.Medals nation = 1;
+      private java.util.List<it.sayservice.services.universiadi2013.data.message.Data.Medals> nation_ =
+        java.util.Collections.emptyList();
+      private void ensureNationIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          nation_ = new java.util.ArrayList<it.sayservice.services.universiadi2013.data.message.Data.Medals>(nation_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      
+      private com.google.protobuf.RepeatedFieldBuilder<
+          it.sayservice.services.universiadi2013.data.message.Data.Medals, it.sayservice.services.universiadi2013.data.message.Data.Medals.Builder, it.sayservice.services.universiadi2013.data.message.Data.MedalsOrBuilder> nationBuilder_;
+      
+      public java.util.List<it.sayservice.services.universiadi2013.data.message.Data.Medals> getNationList() {
+        if (nationBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(nation_);
+        } else {
+          return nationBuilder_.getMessageList();
+        }
+      }
+      public int getNationCount() {
+        if (nationBuilder_ == null) {
+          return nation_.size();
+        } else {
+          return nationBuilder_.getCount();
+        }
+      }
+      public it.sayservice.services.universiadi2013.data.message.Data.Medals getNation(int index) {
+        if (nationBuilder_ == null) {
+          return nation_.get(index);
+        } else {
+          return nationBuilder_.getMessage(index);
+        }
+      }
+      public Builder setNation(
+          int index, it.sayservice.services.universiadi2013.data.message.Data.Medals value) {
+        if (nationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureNationIsMutable();
+          nation_.set(index, value);
+          onChanged();
+        } else {
+          nationBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      public Builder setNation(
+          int index, it.sayservice.services.universiadi2013.data.message.Data.Medals.Builder builderForValue) {
+        if (nationBuilder_ == null) {
+          ensureNationIsMutable();
+          nation_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          nationBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addNation(it.sayservice.services.universiadi2013.data.message.Data.Medals value) {
+        if (nationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureNationIsMutable();
+          nation_.add(value);
+          onChanged();
+        } else {
+          nationBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      public Builder addNation(
+          int index, it.sayservice.services.universiadi2013.data.message.Data.Medals value) {
+        if (nationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureNationIsMutable();
+          nation_.add(index, value);
+          onChanged();
+        } else {
+          nationBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      public Builder addNation(
+          it.sayservice.services.universiadi2013.data.message.Data.Medals.Builder builderForValue) {
+        if (nationBuilder_ == null) {
+          ensureNationIsMutable();
+          nation_.add(builderForValue.build());
+          onChanged();
+        } else {
+          nationBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addNation(
+          int index, it.sayservice.services.universiadi2013.data.message.Data.Medals.Builder builderForValue) {
+        if (nationBuilder_ == null) {
+          ensureNationIsMutable();
+          nation_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          nationBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addAllNation(
+          java.lang.Iterable<? extends it.sayservice.services.universiadi2013.data.message.Data.Medals> values) {
+        if (nationBuilder_ == null) {
+          ensureNationIsMutable();
+          super.addAll(values, nation_);
+          onChanged();
+        } else {
+          nationBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      public Builder clearNation() {
+        if (nationBuilder_ == null) {
+          nation_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          nationBuilder_.clear();
+        }
+        return this;
+      }
+      public Builder removeNation(int index) {
+        if (nationBuilder_ == null) {
+          ensureNationIsMutable();
+          nation_.remove(index);
+          onChanged();
+        } else {
+          nationBuilder_.remove(index);
+        }
+        return this;
+      }
+      public it.sayservice.services.universiadi2013.data.message.Data.Medals.Builder getNationBuilder(
+          int index) {
+        return getNationFieldBuilder().getBuilder(index);
+      }
+      public it.sayservice.services.universiadi2013.data.message.Data.MedalsOrBuilder getNationOrBuilder(
+          int index) {
+        if (nationBuilder_ == null) {
+          return nation_.get(index);  } else {
+          return nationBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      public java.util.List<? extends it.sayservice.services.universiadi2013.data.message.Data.MedalsOrBuilder> 
+           getNationOrBuilderList() {
+        if (nationBuilder_ != null) {
+          return nationBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(nation_);
+        }
+      }
+      public it.sayservice.services.universiadi2013.data.message.Data.Medals.Builder addNationBuilder() {
+        return getNationFieldBuilder().addBuilder(
+            it.sayservice.services.universiadi2013.data.message.Data.Medals.getDefaultInstance());
+      }
+      public it.sayservice.services.universiadi2013.data.message.Data.Medals.Builder addNationBuilder(
+          int index) {
+        return getNationFieldBuilder().addBuilder(
+            index, it.sayservice.services.universiadi2013.data.message.Data.Medals.getDefaultInstance());
+      }
+      public java.util.List<it.sayservice.services.universiadi2013.data.message.Data.Medals.Builder> 
+           getNationBuilderList() {
+        return getNationFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          it.sayservice.services.universiadi2013.data.message.Data.Medals, it.sayservice.services.universiadi2013.data.message.Data.Medals.Builder, it.sayservice.services.universiadi2013.data.message.Data.MedalsOrBuilder> 
+          getNationFieldBuilder() {
+        if (nationBuilder_ == null) {
+          nationBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              it.sayservice.services.universiadi2013.data.message.Data.Medals, it.sayservice.services.universiadi2013.data.message.Data.Medals.Builder, it.sayservice.services.universiadi2013.data.message.Data.MedalsOrBuilder>(
+                  nation_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          nation_ = null;
+        }
+        return nationBuilder_;
+      }
+      
+      // @@protoc_insertion_point(builder_scope:it.sayservice.services.universiadi2013.data.message.MedalsList)
+    }
+    
+    static {
+      defaultInstance = new MedalsList(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:it.sayservice.services.universiadi2013.data.message.MedalsList)
+  }
+  
+  public interface MedalsOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // required string nationCode = 1;
+    boolean hasNationCode();
+    String getNationCode();
+    
+    // required string nationName = 2;
+    boolean hasNationName();
+    String getNationName();
+    
+    // required string rank = 3;
+    boolean hasRank();
+    String getRank();
+    
+    // required string rankByTotal = 4;
+    boolean hasRankByTotal();
+    String getRankByTotal();
+    
+    // required string total = 5;
+    boolean hasTotal();
+    String getTotal();
+    
+    // optional string gold = 6;
+    boolean hasGold();
+    String getGold();
+    
+    // optional string silver = 7;
+    boolean hasSilver();
+    String getSilver();
+    
+    // optional string bronze = 8;
+    boolean hasBronze();
+    String getBronze();
+  }
+  public static final class Medals extends
+      com.google.protobuf.GeneratedMessage
+      implements MedalsOrBuilder {
+    // Use Medals.newBuilder() to construct.
+    private Medals(Builder builder) {
+      super(builder);
+    }
+    private Medals(boolean noInit) {}
+    
+    private static final Medals defaultInstance;
+    public static Medals getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public Medals getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return it.sayservice.services.universiadi2013.data.message.Data.internal_static_it_sayservice_services_universiadi2013_data_message_Medals_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return it.sayservice.services.universiadi2013.data.message.Data.internal_static_it_sayservice_services_universiadi2013_data_message_Medals_fieldAccessorTable;
+    }
+    
+    private int bitField0_;
+    // required string nationCode = 1;
+    public static final int NATIONCODE_FIELD_NUMBER = 1;
+    private java.lang.Object nationCode_;
+    public boolean hasNationCode() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public String getNationCode() {
+      java.lang.Object ref = nationCode_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          nationCode_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getNationCodeBytes() {
+      java.lang.Object ref = nationCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        nationCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // required string nationName = 2;
+    public static final int NATIONNAME_FIELD_NUMBER = 2;
+    private java.lang.Object nationName_;
+    public boolean hasNationName() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    public String getNationName() {
+      java.lang.Object ref = nationName_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          nationName_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getNationNameBytes() {
+      java.lang.Object ref = nationName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        nationName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // required string rank = 3;
+    public static final int RANK_FIELD_NUMBER = 3;
+    private java.lang.Object rank_;
+    public boolean hasRank() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    public String getRank() {
+      java.lang.Object ref = rank_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          rank_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getRankBytes() {
+      java.lang.Object ref = rank_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        rank_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // required string rankByTotal = 4;
+    public static final int RANKBYTOTAL_FIELD_NUMBER = 4;
+    private java.lang.Object rankByTotal_;
+    public boolean hasRankByTotal() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    public String getRankByTotal() {
+      java.lang.Object ref = rankByTotal_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          rankByTotal_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getRankByTotalBytes() {
+      java.lang.Object ref = rankByTotal_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        rankByTotal_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // required string total = 5;
+    public static final int TOTAL_FIELD_NUMBER = 5;
+    private java.lang.Object total_;
+    public boolean hasTotal() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    public String getTotal() {
+      java.lang.Object ref = total_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          total_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getTotalBytes() {
+      java.lang.Object ref = total_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        total_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // optional string gold = 6;
+    public static final int GOLD_FIELD_NUMBER = 6;
+    private java.lang.Object gold_;
+    public boolean hasGold() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    public String getGold() {
+      java.lang.Object ref = gold_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          gold_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getGoldBytes() {
+      java.lang.Object ref = gold_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        gold_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // optional string silver = 7;
+    public static final int SILVER_FIELD_NUMBER = 7;
+    private java.lang.Object silver_;
+    public boolean hasSilver() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    public String getSilver() {
+      java.lang.Object ref = silver_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          silver_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getSilverBytes() {
+      java.lang.Object ref = silver_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        silver_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // optional string bronze = 8;
+    public static final int BRONZE_FIELD_NUMBER = 8;
+    private java.lang.Object bronze_;
+    public boolean hasBronze() {
+      return ((bitField0_ & 0x00000080) == 0x00000080);
+    }
+    public String getBronze() {
+      java.lang.Object ref = bronze_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          bronze_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getBronzeBytes() {
+      java.lang.Object ref = bronze_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        bronze_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    private void initFields() {
+      nationCode_ = "";
+      nationName_ = "";
+      rank_ = "";
+      rankByTotal_ = "";
+      total_ = "";
+      gold_ = "";
+      silver_ = "";
+      bronze_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      if (!hasNationCode()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasNationName()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasRank()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasRankByTotal()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasTotal()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getNationCodeBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getNationNameBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getRankBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(4, getRankByTotalBytes());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeBytes(5, getTotalBytes());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeBytes(6, getGoldBytes());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeBytes(7, getSilverBytes());
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        output.writeBytes(8, getBronzeBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getNationCodeBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getNationNameBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getRankBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, getRankByTotalBytes());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(5, getTotalBytes());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(6, getGoldBytes());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(7, getSilverBytes());
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(8, getBronzeBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static it.sayservice.services.universiadi2013.data.message.Data.Medals parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static it.sayservice.services.universiadi2013.data.message.Data.Medals parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static it.sayservice.services.universiadi2013.data.message.Data.Medals parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static it.sayservice.services.universiadi2013.data.message.Data.Medals parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static it.sayservice.services.universiadi2013.data.message.Data.Medals parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static it.sayservice.services.universiadi2013.data.message.Data.Medals parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static it.sayservice.services.universiadi2013.data.message.Data.Medals parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static it.sayservice.services.universiadi2013.data.message.Data.Medals parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static it.sayservice.services.universiadi2013.data.message.Data.Medals parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static it.sayservice.services.universiadi2013.data.message.Data.Medals parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(it.sayservice.services.universiadi2013.data.message.Data.Medals prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements it.sayservice.services.universiadi2013.data.message.Data.MedalsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return it.sayservice.services.universiadi2013.data.message.Data.internal_static_it_sayservice_services_universiadi2013_data_message_Medals_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return it.sayservice.services.universiadi2013.data.message.Data.internal_static_it_sayservice_services_universiadi2013_data_message_Medals_fieldAccessorTable;
+      }
+      
+      // Construct using it.sayservice.services.universiadi2013.data.message.Data.Medals.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        nationCode_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        nationName_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        rank_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        rankByTotal_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
+        total_ = "";
+        bitField0_ = (bitField0_ & ~0x00000010);
+        gold_ = "";
+        bitField0_ = (bitField0_ & ~0x00000020);
+        silver_ = "";
+        bitField0_ = (bitField0_ & ~0x00000040);
+        bronze_ = "";
+        bitField0_ = (bitField0_ & ~0x00000080);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return it.sayservice.services.universiadi2013.data.message.Data.Medals.getDescriptor();
+      }
+      
+      public it.sayservice.services.universiadi2013.data.message.Data.Medals getDefaultInstanceForType() {
+        return it.sayservice.services.universiadi2013.data.message.Data.Medals.getDefaultInstance();
+      }
+      
+      public it.sayservice.services.universiadi2013.data.message.Data.Medals build() {
+        it.sayservice.services.universiadi2013.data.message.Data.Medals result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private it.sayservice.services.universiadi2013.data.message.Data.Medals buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        it.sayservice.services.universiadi2013.data.message.Data.Medals result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public it.sayservice.services.universiadi2013.data.message.Data.Medals buildPartial() {
+        it.sayservice.services.universiadi2013.data.message.Data.Medals result = new it.sayservice.services.universiadi2013.data.message.Data.Medals(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.nationCode_ = nationCode_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.nationName_ = nationName_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.rank_ = rank_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.rankByTotal_ = rankByTotal_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.total_ = total_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.gold_ = gold_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.silver_ = silver_;
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+          to_bitField0_ |= 0x00000080;
+        }
+        result.bronze_ = bronze_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof it.sayservice.services.universiadi2013.data.message.Data.Medals) {
+          return mergeFrom((it.sayservice.services.universiadi2013.data.message.Data.Medals)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(it.sayservice.services.universiadi2013.data.message.Data.Medals other) {
+        if (other == it.sayservice.services.universiadi2013.data.message.Data.Medals.getDefaultInstance()) return this;
+        if (other.hasNationCode()) {
+          setNationCode(other.getNationCode());
+        }
+        if (other.hasNationName()) {
+          setNationName(other.getNationName());
+        }
+        if (other.hasRank()) {
+          setRank(other.getRank());
+        }
+        if (other.hasRankByTotal()) {
+          setRankByTotal(other.getRankByTotal());
+        }
+        if (other.hasTotal()) {
+          setTotal(other.getTotal());
+        }
+        if (other.hasGold()) {
+          setGold(other.getGold());
+        }
+        if (other.hasSilver()) {
+          setSilver(other.getSilver());
+        }
+        if (other.hasBronze()) {
+          setBronze(other.getBronze());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        if (!hasNationCode()) {
+          
+          return false;
+        }
+        if (!hasNationName()) {
+          
+          return false;
+        }
+        if (!hasRank()) {
+          
+          return false;
+        }
+        if (!hasRankByTotal()) {
+          
+          return false;
+        }
+        if (!hasTotal()) {
+          
+          return false;
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              nationCode_ = input.readBytes();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              nationName_ = input.readBytes();
+              break;
+            }
+            case 26: {
+              bitField0_ |= 0x00000004;
+              rank_ = input.readBytes();
+              break;
+            }
+            case 34: {
+              bitField0_ |= 0x00000008;
+              rankByTotal_ = input.readBytes();
+              break;
+            }
+            case 42: {
+              bitField0_ |= 0x00000010;
+              total_ = input.readBytes();
+              break;
+            }
+            case 50: {
+              bitField0_ |= 0x00000020;
+              gold_ = input.readBytes();
+              break;
+            }
+            case 58: {
+              bitField0_ |= 0x00000040;
+              silver_ = input.readBytes();
+              break;
+            }
+            case 66: {
+              bitField0_ |= 0x00000080;
+              bronze_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // required string nationCode = 1;
+      private java.lang.Object nationCode_ = "";
+      public boolean hasNationCode() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      public String getNationCode() {
+        java.lang.Object ref = nationCode_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          nationCode_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setNationCode(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        nationCode_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearNationCode() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        nationCode_ = getDefaultInstance().getNationCode();
+        onChanged();
+        return this;
+      }
+      void setNationCode(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000001;
+        nationCode_ = value;
+        onChanged();
+      }
+      
+      // required string nationName = 2;
+      private java.lang.Object nationName_ = "";
+      public boolean hasNationName() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      public String getNationName() {
+        java.lang.Object ref = nationName_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          nationName_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setNationName(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        nationName_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearNationName() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        nationName_ = getDefaultInstance().getNationName();
+        onChanged();
+        return this;
+      }
+      void setNationName(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000002;
+        nationName_ = value;
+        onChanged();
+      }
+      
+      // required string rank = 3;
+      private java.lang.Object rank_ = "";
+      public boolean hasRank() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      public String getRank() {
+        java.lang.Object ref = rank_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          rank_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setRank(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        rank_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearRank() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        rank_ = getDefaultInstance().getRank();
+        onChanged();
+        return this;
+      }
+      void setRank(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000004;
+        rank_ = value;
+        onChanged();
+      }
+      
+      // required string rankByTotal = 4;
+      private java.lang.Object rankByTotal_ = "";
+      public boolean hasRankByTotal() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      public String getRankByTotal() {
+        java.lang.Object ref = rankByTotal_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          rankByTotal_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setRankByTotal(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        rankByTotal_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearRankByTotal() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        rankByTotal_ = getDefaultInstance().getRankByTotal();
+        onChanged();
+        return this;
+      }
+      void setRankByTotal(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000008;
+        rankByTotal_ = value;
+        onChanged();
+      }
+      
+      // required string total = 5;
+      private java.lang.Object total_ = "";
+      public boolean hasTotal() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      public String getTotal() {
+        java.lang.Object ref = total_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          total_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setTotal(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        total_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearTotal() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        total_ = getDefaultInstance().getTotal();
+        onChanged();
+        return this;
+      }
+      void setTotal(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000010;
+        total_ = value;
+        onChanged();
+      }
+      
+      // optional string gold = 6;
+      private java.lang.Object gold_ = "";
+      public boolean hasGold() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      public String getGold() {
+        java.lang.Object ref = gold_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          gold_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setGold(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        gold_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearGold() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        gold_ = getDefaultInstance().getGold();
+        onChanged();
+        return this;
+      }
+      void setGold(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000020;
+        gold_ = value;
+        onChanged();
+      }
+      
+      // optional string silver = 7;
+      private java.lang.Object silver_ = "";
+      public boolean hasSilver() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      public String getSilver() {
+        java.lang.Object ref = silver_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          silver_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setSilver(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
+        silver_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearSilver() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        silver_ = getDefaultInstance().getSilver();
+        onChanged();
+        return this;
+      }
+      void setSilver(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000040;
+        silver_ = value;
+        onChanged();
+      }
+      
+      // optional string bronze = 8;
+      private java.lang.Object bronze_ = "";
+      public boolean hasBronze() {
+        return ((bitField0_ & 0x00000080) == 0x00000080);
+      }
+      public String getBronze() {
+        java.lang.Object ref = bronze_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          bronze_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setBronze(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000080;
+        bronze_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearBronze() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        bronze_ = getDefaultInstance().getBronze();
+        onChanged();
+        return this;
+      }
+      void setBronze(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000080;
+        bronze_ = value;
+        onChanged();
+      }
+      
+      // @@protoc_insertion_point(builder_scope:it.sayservice.services.universiadi2013.data.message.Medals)
+    }
+    
+    static {
+      defaultInstance = new Medals(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:it.sayservice.services.universiadi2013.data.message.Medals)
   }
   
   private static com.google.protobuf.Descriptors.Descriptor
@@ -12415,6 +15046,16 @@ public final class Data {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_it_sayservice_services_universiadi2013_data_message_Venue_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_it_sayservice_services_universiadi2013_data_message_MedalsList_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_it_sayservice_services_universiadi2013_data_message_MedalsList_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_it_sayservice_services_universiadi2013_data_message_Medals_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_it_sayservice_services_universiadi2013_data_message_Medals_fieldAccessorTable;
   
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -12464,35 +15105,47 @@ public final class Data {
       "\r \003(\0132=.it.sayservice.services.universia" +
       "di2013.data.message.KeyValue\022T\n\raccessib" +
       "ility\030\016 \003(\0132=.it.sayservice.services.uni",
-      "versiadi2013.data.message.KeyValue\"\266\003\n\004N" +
+      "versiadi2013.data.message.KeyValue\"\324\003\n\004N" +
       "ews\022\n\n\002id\030\001 \002(\t\022L\n\005title\030\002 \003(\0132=.it.says" +
       "ervice.services.universiadi2013.data.mes" +
       "sage.KeyValue\022P\n\tshortDesc\030\003 \003(\0132=.it.sa" +
       "yservice.services.universiadi2013.data.m" +
-      "essage.KeyValue\022\020\n\010category\030\004 \002(\t\022\021\n\tpub" +
-      "lished\030\005 \002(\t\022M\n\007contact\030\006 \001(\0132<.it.sayse" +
-      "rvice.services.universiadi2013.data.mess" +
-      "age.Contact\022O\n\010longDesc\030\007 \003(\0132=.it.sayse" +
-      "rvice.services.universiadi2013.data.mess",
-      "age.KeyValue\022\013\n\003url\030\010 \001(\t\022\020\n\010imageUrl\030\t " +
-      "\001(\t\022\r\n\005poiId\030\n \001(\t\022\017\n\007eventId\030\013 \001(\t\"\267\003\n\005" +
-      "Event\022\n\n\002id\030\001 \002(\t\022L\n\005title\030\002 \003(\0132=.it.sa" +
+      "essage.KeyValue\022O\n\010longDesc\030\004 \003(\0132=.it.s" +
+      "ayservice.services.universiadi2013.data." +
+      "message.KeyValue\022\020\n\010category\030\005 \002(\t\022\021\n\tpu" +
+      "blished\030\006 \002(\t\022M\n\007contact\030\007 \001(\0132<.it.says" +
+      "ervice.services.universiadi2013.data.mes",
+      "sage.Contact\022\013\n\003url\030\010 \001(\t\022\020\n\010imageUrl\030\t " +
+      "\001(\t\022\r\n\005poiId\030\n \001(\t\022\017\n\007eventId\030\013 \003(\t\022\016\n\006s" +
+      "ports\030\014 \003(\t\022\014\n\004tags\030\r \003(\t\"\246\004\n\005Event\022\n\n\002i" +
+      "d\030\001 \002(\t\022L\n\005title\030\002 \003(\0132=.it.sayservice.s" +
+      "ervices.universiadi2013.data.message.Key" +
+      "Value\022P\n\tshortDesc\030\003 \003(\0132=.it.sayservice" +
+      ".services.universiadi2013.data.message.K" +
+      "eyValue\022O\n\010longDesc\030\004 \003(\0132=.it.sayservic" +
+      "e.services.universiadi2013.data.message." +
+      "KeyValue\022\020\n\010category\030\005 \002(\t\022\021\n\tstartDate\030",
+      "\006 \002(\t\022\017\n\007endDate\030\007 \002(\t\022M\n\007contact\030\010 \001(\0132" +
+      "<.it.sayservice.services.universiadi2013" +
+      ".data.message.Contact\022O\n\010location\030\t \001(\0132" +
+      "=.it.sayservice.services.universiadi2013" +
+      ".data.message.Location\022\013\n\003url\030\n \001(\t\022\020\n\010i" +
+      "mageUrl\030\013 \001(\t\022\r\n\005poiId\030\014 \001(\t\022\016\n\006sports\030\r" +
+      " \003(\t\022\014\n\004tags\030\016 \003(\t\"\266\002\n\005Venue\022\n\n\002id\030\001 \002(\t" +
+      "\022\020\n\010category\030\002 \002(\t\022K\n\004name\030\003 \003(\0132=.it.sa" +
       "yservice.services.universiadi2013.data.m" +
-      "essage.KeyValue\022P\n\tshortDesc\030\003 \003(\0132=.it." +
-      "sayservice.services.universiadi2013.data" +
-      ".message.KeyValue\022O\n\010longDesc\030\004 \003(\0132=.it" +
-      ".sayservice.services.universiadi2013.dat" +
-      "a.message.KeyValue\022\020\n\010category\030\005 \002(\t\022\021\n\t" +
-      "startDate\030\006 \002(\t\022\017\n\007endDate\030\007 \002(\t\022M\n\007cont",
-      "act\030\010 \001(\0132<.it.sayservice.services.unive" +
-      "rsiadi2013.data.message.Contact\022\013\n\003url\030\t" +
-      " \001(\t\022\020\n\010imageUrl\030\n \001(\t\022\r\n\005poiId\030\013 \001(\t\"\320\001" +
-      "\n\005Venue\022\n\n\002id\030\001 \002(\t\022\020\n\010category\030\002 \002(\t\022K\n" +
-      "\004name\030\003 \003(\0132=.it.sayservice.services.uni" +
-      "versiadi2013.data.message.KeyValue\022O\n\010lo" +
-      "cation\030\004 \002(\0132=.it.sayservice.services.un" +
-      "iversiadi2013.data.message.Location\022\013\n\003t" +
-      "ag\030\005 \003(\t"
+      "essage.KeyValue\022R\n\013description\030\004 \003(\0132=.i",
+      "t.sayservice.services.universiadi2013.da" +
+      "ta.message.KeyValue\022O\n\010location\030\005 \002(\0132=." +
+      "it.sayservice.services.universiadi2013.d" +
+      "ata.message.Location\022\013\n\003tag\030\006 \003(\t\022\020\n\010ima" +
+      "geUrl\030\007 \001(\t\"Y\n\nMedalsList\022K\n\006nation\030\001 \003(" +
+      "\0132;.it.sayservice.services.universiadi20" +
+      "13.data.message.Medals\"\220\001\n\006Medals\022\022\n\nnat" +
+      "ionCode\030\001 \002(\t\022\022\n\nnationName\030\002 \002(\t\022\014\n\004ran" +
+      "k\030\003 \002(\t\022\023\n\013rankByTotal\030\004 \002(\t\022\r\n\005total\030\005 " +
+      "\002(\t\022\014\n\004gold\030\006 \001(\t\022\016\n\006silver\030\007 \001(\t\022\016\n\006bro",
+      "nze\030\010 \001(\t"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -12560,7 +15213,7 @@ public final class Data {
           internal_static_it_sayservice_services_universiadi2013_data_message_News_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_it_sayservice_services_universiadi2013_data_message_News_descriptor,
-              new java.lang.String[] { "Id", "Title", "ShortDesc", "Category", "Published", "Contact", "LongDesc", "Url", "ImageUrl", "PoiId", "EventId", },
+              new java.lang.String[] { "Id", "Title", "ShortDesc", "LongDesc", "Category", "Published", "Contact", "Url", "ImageUrl", "PoiId", "EventId", "Sports", "Tags", },
               it.sayservice.services.universiadi2013.data.message.Data.News.class,
               it.sayservice.services.universiadi2013.data.message.Data.News.Builder.class);
           internal_static_it_sayservice_services_universiadi2013_data_message_Event_descriptor =
@@ -12568,7 +15221,7 @@ public final class Data {
           internal_static_it_sayservice_services_universiadi2013_data_message_Event_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_it_sayservice_services_universiadi2013_data_message_Event_descriptor,
-              new java.lang.String[] { "Id", "Title", "ShortDesc", "LongDesc", "Category", "StartDate", "EndDate", "Contact", "Url", "ImageUrl", "PoiId", },
+              new java.lang.String[] { "Id", "Title", "ShortDesc", "LongDesc", "Category", "StartDate", "EndDate", "Contact", "Location", "Url", "ImageUrl", "PoiId", "Sports", "Tags", },
               it.sayservice.services.universiadi2013.data.message.Data.Event.class,
               it.sayservice.services.universiadi2013.data.message.Data.Event.Builder.class);
           internal_static_it_sayservice_services_universiadi2013_data_message_Venue_descriptor =
@@ -12576,9 +15229,25 @@ public final class Data {
           internal_static_it_sayservice_services_universiadi2013_data_message_Venue_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_it_sayservice_services_universiadi2013_data_message_Venue_descriptor,
-              new java.lang.String[] { "Id", "Category", "Name", "Location", "Tag", },
+              new java.lang.String[] { "Id", "Category", "Name", "Description", "Location", "Tag", "ImageUrl", },
               it.sayservice.services.universiadi2013.data.message.Data.Venue.class,
               it.sayservice.services.universiadi2013.data.message.Data.Venue.Builder.class);
+          internal_static_it_sayservice_services_universiadi2013_data_message_MedalsList_descriptor =
+            getDescriptor().getMessageTypes().get(10);
+          internal_static_it_sayservice_services_universiadi2013_data_message_MedalsList_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_it_sayservice_services_universiadi2013_data_message_MedalsList_descriptor,
+              new java.lang.String[] { "Nation", },
+              it.sayservice.services.universiadi2013.data.message.Data.MedalsList.class,
+              it.sayservice.services.universiadi2013.data.message.Data.MedalsList.Builder.class);
+          internal_static_it_sayservice_services_universiadi2013_data_message_Medals_descriptor =
+            getDescriptor().getMessageTypes().get(11);
+          internal_static_it_sayservice_services_universiadi2013_data_message_Medals_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_it_sayservice_services_universiadi2013_data_message_Medals_descriptor,
+              new java.lang.String[] { "NationCode", "NationName", "Rank", "RankByTotal", "Total", "Gold", "Silver", "Bronze", },
+              it.sayservice.services.universiadi2013.data.message.Data.Medals.class,
+              it.sayservice.services.universiadi2013.data.message.Data.Medals.Builder.class);
           return null;
         }
       };
