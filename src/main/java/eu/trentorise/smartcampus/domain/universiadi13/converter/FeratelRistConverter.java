@@ -53,12 +53,17 @@ public class FeratelRistConverter implements DataConverter {
 	private GenericPOI extractGenericPOI(StrutturaRistoro venue) throws ParseException {
 		GenericPOI gp = new GenericPOI();
 		
-		gp.setType(TYPE_FERATEL + " - Ristoro");
+		gp.setType(venue.getTipo());
 		gp.setSource("Universiadi 2013");
 		
 		gp.setTitle(venue.getNome());
-		if (venue.hasDescrizioneIt()) {
+		Map<String,String> descrMap = new HashMap<String, String>();
+		if (venue.hasDescrizioneEn()) {
+			gp.setDescription(venue.getDescrizioneEn());
+			descrMap.put("EN", venue.getDescrizioneEn());
+		} else if (venue.hasDescrizioneIt()) {
 			gp.setDescription(venue.getDescrizioneIt());
+			descrMap.put("IT", venue.getDescrizioneIt());
 		}
 		gp.setId(venue.getId()+"@feratel");
 		
@@ -89,8 +94,9 @@ public class FeratelRistConverter implements DataConverter {
 			map.put("imageUrl", venue.getFoto(0).getImageUrl());
 		}
 		if (venue.hasCategoriaIt()) {
-			map.put("categoria", venue.getCategoriaIt());
+			map.put("categoria", venue.getCategoriaEn());
 		}
+		map.put("description", descrMap);
 		if (venue.hasCucina()) {
 			map.put("cucina", venue.getCucina());
 		}

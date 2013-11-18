@@ -89,7 +89,6 @@ public class EventsDataConverter implements DataConverter {
 	private GenericEvent extractGenericEvent(Event ev) throws ParseException {
 		GenericEvent ge = new GenericEvent();
 		
-		ge.setDescription(createDescription(ev));
 		
 		ge.setSource("Universiadi 2013");
 
@@ -115,7 +114,7 @@ public class EventsDataConverter implements DataConverter {
 			
 		}
 		
-		ge.setType(TYPE_UNIVERSIADI);
+		ge.setType(ev.getCategory());
 		
 		String s = ev.getId();
 		ge.setId(s+"@universiadi13");
@@ -123,18 +122,24 @@ public class EventsDataConverter implements DataConverter {
 			ge.setPoiId(ev.getPoiId()+"@universiadi13");
 		}
 
+		Map<String,String> titleMap = new HashMap<String, String>();
+		
 		for (KeyValue kv : ev.getTitleList()) {
-			if ("IT".equals(kv.getKey())) {
-				ge.setTitle(kv.getValue());
-			}
+			titleMap.put(kv.getKey(), kv.getValue());
 		}
-		if (ge.getTitle() == null && ev.getTitleCount() > 0) {
-			ge.setTitle(ev.getTitle(0).getValue());
-		}
+		if (titleMap.containsKey("EN")) ge.setTitle(titleMap.get("EN"));
+		else if (titleMap.size() > 0) ge.setTitle(titleMap.values().iterator().next());
+
+		Map<String,String> descrMap = createDescription(ev);
+		if (descrMap.containsKey("EN")) ge.setDescription(descrMap.get("EN"));
+		else if (descrMap.size() > 0) ge.setDescription(descrMap.values().iterator().next());
+		
 		
 		Map<String,Object> map = new TreeMap<String, Object>();
 		map.put("imageUrl", ev.getImageUrl());
 		map.put("category", ev.getCategory());
+		map.put("title", titleMap);
+		map.put("description", descrMap);
 		if (ev.getSportsCount() > 0) {
 			map.put("sports", ev.getSportsList());
 		}
@@ -147,33 +152,27 @@ public class EventsDataConverter implements DataConverter {
 		return ge;
 	}
 
-	private String createDescription(Event ev) {
-		StringBuilder descr = new StringBuilder();
+	private Map<String,String> createDescription(Event ev) {
+		Map<String,String> res = new HashMap<String, String>();
+		
 		for (KeyValue kv : ev.getLongDescList()) {
-			if ("IT".equals(kv.getKey())) {
-				descr.append(kv.getValue());
+			res.put(kv.getKey(), kv.getValue());
+		}
+		for (KeyValue kv : ev.getShortDescList()) {
+			if (!res.containsKey(kv.getKey()) || res.get(kv.getKey()).isEmpty()) {
+				res.put(kv.getKey(), kv.getValue());	
 			}
 		}
-		if (descr.length() == 0) {
-			for (KeyValue kv : ev.getShortDescList()) {
-				if ("IT".equals(kv.getKey())) {
-					descr.append(kv.getValue());
-				}
+		for (String key : res.keySet()) {
+			String s = res.get(key);
+			if (ev.getUrl() != null) {
+				s += "<a href=\""+ev.getUrl()+"\">"+ev.getUrl()+"</a>";
 			}
-		}
-		if (descr.length() == 0 && ev.getLongDescCount() > 0) {
-			descr.append(ev.getLongDesc(0).getValue());
-		} else if (descr.length() == 0 && ev.getShortDescCount() > 0) {
-			descr.append(ev.getShortDesc(0).getValue());
+			s = s.replace("\n", " ");
+			s = s.replace("\t", " ");
+			res.put(key, s);
 		}
 		
-		if (ev.getUrl() != null) {
-			descr.append("<a href=\""+ev.getUrl()+"\">"+ev.getUrl()+"</a>");
-		}
-		
-		String s = descr.toString();
-		s = s.replace("\n", " ");
-		s = s.replace("\t", " ");
-		return s;
+		return res;
 	}
 }

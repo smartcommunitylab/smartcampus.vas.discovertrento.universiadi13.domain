@@ -12,6 +12,7 @@ import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -58,24 +59,33 @@ public class POIDataConverter implements DataConverter {
 	private GenericPOI extractGenericPOI(Poi venue) throws ParseException {
 		GenericPOI gp = new GenericPOI();
 		
-		gp.setType(TYPE_UNIVERSIADI + " - Places");
+		gp.setType(venue.getCategory());
 		
 		gp.setSource("Universiadi 2013");
 		
+		Map<String,String> titleMap = new HashMap<String, String>();
 		for (KeyValue kv : venue.getNameList()) {
-			if ("IT".equals(kv.getKey())) {
-				gp.setTitle(kv.getValue());
+			if (!kv.getValue().isEmpty()) {
+				titleMap.put(kv.getKey(), kv.getValue());
 			}
 		}
-		if (gp.getTitle() == null && venue.getNameCount() > 0) {
-			gp.setTitle(venue.getName(0).getValue());
+		if (titleMap.containsKey("EN")) gp.setTitle(titleMap.get("EN"));
+		else if (titleMap.size() > 0) gp.setTitle(titleMap.values().iterator().next());
+
+		Map<String,String> descrMap = new HashMap<String, String>();
+		for (KeyValue kv : venue.getDescriptionList()) {
+			if (!kv.getValue().isEmpty()) {
+				descrMap.put(kv.getKey(), kv.getValue());
+			}
 		}
+		if (descrMap.containsKey("EN")) gp.setDescription(descrMap.get("EN"));
+		else if (descrMap.size() > 0) gp.setDescription(descrMap.values().iterator().next());
 
 		gp.setId(venue.getId()+"@universiadi13");
 		
 		Address address = null;
 		for (Address a : venue.getLocation().getAddressList()) {
-			if ("IT".equals(a.getLang())) {
+			if ("EN".equals(a.getLang())) {
 				address = a;
 			}
 		}
@@ -92,13 +102,14 @@ public class POIDataConverter implements DataConverter {
 		pd.setPostalCode(address.getPostalCode());
 		pd.setStreet(address.getStreet());
 		gp.setPoiData(pd);
-		gp.setDescription(createValue(venue.getDescriptionList()));
 		
 		Map<String,Object> map = new TreeMap<String, Object>();
 		map.put("category", venue.getCategory());
 		if (venue.getImageCount() > 0) {
 			map.put("imageUrl", venue.getImage(0).getImageUrl());
 		}
+		map.put("title", titleMap);
+		map.put("description", descrMap);
 		map.put("serviceDescription", createValue(venue.getServiceDescriptionList()));
 		map.put("topic", venue.getTopicList());
 		map.put("timetable", createValue(venue.getTimetableList()));
@@ -114,22 +125,14 @@ public class POIDataConverter implements DataConverter {
 		return gp;
 	}
 	
-	private String createValue(List<KeyValue> list) {
-		if (list == null) return "";
-		StringBuilder descr = new StringBuilder();
+	private Map<String,String> createValue(List<KeyValue> list) {
+		if (list == null) return Collections.emptyMap();
+		Map<String,String> res = new HashMap<String, String>(); 
 		for (KeyValue kv : list) {
-			if ("IT".equals(kv.getKey())) {
-				descr.append(kv.getValue());
-			}
-		}
-		if (descr.length() == 0 && list.size() > 0) {
-			descr.append(list.get(0).getValue());
+			res.put(kv.getKey(), kv.getValue().replace("\n", " ").replace("\t", " "));
 		}
 		
-		String s = descr.toString();
-		s = s.replace("\n", " ");
-		s = s.replace("\t", " ");
-		return s;
+		return res;
 	}
 
 }

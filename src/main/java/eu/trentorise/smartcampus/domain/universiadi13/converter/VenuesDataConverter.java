@@ -54,25 +54,29 @@ public class VenuesDataConverter implements DataConverter {
 
 	private GenericPOI extractGenericPOI(Venue venue) throws ParseException {
 		GenericPOI gp = new GenericPOI();
-		
-		gp.setType(TYPE_UNIVERSIADI + " - Venues");
+		gp.setType(venue.getCategory());
 		
 		gp.setSource("Universiadi 2013");
 		
+		Map<String,String> titleMap = new HashMap<String, String>();
 		for (KeyValue kv : venue.getNameList()) {
-			if ("IT".equals(kv.getKey())) {
-				gp.setTitle(kv.getValue());
-			}
+			titleMap.put(kv.getKey(), kv.getValue());
 		}
-		if (gp.getTitle() == null && venue.getNameCount() > 0) {
-			gp.setTitle(venue.getName(0).getValue());
+		if (titleMap.containsKey("EN")) gp.setTitle(titleMap.get("EN"));
+		else if (titleMap.size() > 0) gp.setTitle(titleMap.values().iterator().next());
+
+		Map<String,String> descrMap = new HashMap<String, String>();
+		for (KeyValue kv : venue.getDescriptionList()) {
+			descrMap.put(kv.getKey(), kv.getValue());
 		}
+		if (descrMap.containsKey("EN")) gp.setDescription(descrMap.get("EN"));
+		else if (descrMap.size() > 0) gp.setDescription(descrMap.values().iterator().next());
 
 		gp.setId(venue.getId()+"@universiadi13");
 		
 		Address address = null;
 		for (Address a : venue.getLocation().getAddressList()) {
-			if ("IT".equals(a.getLang())) {
+			if ("EN".equals(a.getLang())) {
 				address = a;
 			}
 		}
@@ -97,6 +101,8 @@ public class VenuesDataConverter implements DataConverter {
 		Map<String,Object> map = new TreeMap<String, Object>();
 		map.put("category", venue.getCategory());
 		map.put("imageUrl", venue.getImageUrl());
+		map.put("title", titleMap);
+		map.put("description", descrMap);
 		try {
 			gp.setCustomData(new ObjectMapper().writeValueAsString(map));
 		} catch (Exception e) {

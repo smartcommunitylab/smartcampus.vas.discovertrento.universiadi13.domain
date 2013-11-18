@@ -53,12 +53,17 @@ public class FeratelPubConverter implements DataConverter {
 	private GenericPOI extractGenericPOI(StrutturaPubblica venue) throws ParseException {
 		GenericPOI gp = new GenericPOI();
 		
-		gp.setType(TYPE_FERATEL + " - Pubblica");
+		gp.setType(venue.getTipo());
 		gp.setSource("Universiadi 2013");
 		
 		gp.setTitle(venue.getNome());
-		if (venue.hasDescrizioneIt()) {
+		Map<String,String> descrMap = new HashMap<String, String>();
+		if (venue.hasDescrizioneEn()) {
+			gp.setDescription(venue.getDescrizioneEn());
+			descrMap.put("EN", venue.getDescrizioneEn());
+		} else if (venue.hasDescrizioneIt()) {
 			gp.setDescription(venue.getDescrizioneIt());
+			descrMap.put("IT", venue.getDescrizioneIt());
 		}
 		gp.setId(venue.getId()+"@feratel");
 		
@@ -88,7 +93,8 @@ public class FeratelPubConverter implements DataConverter {
 		if (venue.getFotoCount() > 0) {
 			map.put("imageUrl", venue.getFoto(0).getImageUrl());
 		}
-		
+		map.put("description", descrMap);
+
 		try {
 			gp.setCustomData(mapper.writeValueAsString(map));
 		} catch (Exception e) {
