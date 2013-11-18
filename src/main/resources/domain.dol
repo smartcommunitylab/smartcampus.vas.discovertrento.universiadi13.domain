@@ -61,3 +61,88 @@ DomainObject UniversiadiVenuesService implements POIService {
     }
 
 }
+
+DomainObject UniversiadiPOIService implements POIService {
+
+    @ServiceNotification(serviceId="it.sayservice.ext.universiadi2013", methodName="GetPoiFromCsv", converter="eu.trentorise.smartcampus.domain.universiadi13.converter.POIDataConverter")
+    port update(data : GenericPOI[]);
+
+    @Subscription(serviceId="it.sayservice.ext.universiadi2013", methodName="GetPoiFromCsv")
+    operation subscribePOIs(csv:String);       
+    
+    action initialize() {
+        invoke subscribePOIs("APT_Trento_Censimento_POI.csv");
+        invoke subscribePOIs("APT_Valsugana_Censimento_POI.csv");
+        invoke subscribePOIs("APT_Pine_Cembra_Censimento_POI.csv");
+    }
+}
+
+DomainObject FeratelCommPOIService implements POIService {
+
+    @ServiceNotification(serviceId="it.sayservice.ext.feratel", methodName="GetFeratelCommerciale", converter="eu.trentorise.smartcampus.domain.universiadi13.converter.FeratelCommConverter")
+    port update(data : GenericPOI[]);
+
+    @Subscription(serviceId="it.sayservice.ext.feratel", methodName="GetFeratelCommerciale")
+    operation subscribePOIs(file:String);       
+    
+    action initialize() {
+        invoke subscribePOIs("fiemme");
+        invoke subscribePOIs("trento");
+    }
+}
+
+DomainObject FeratelPubPOIService implements POIService {
+
+    @ServiceNotification(serviceId="it.sayservice.ext.feratel", methodName="GetFeratelPubbliche", converter="eu.trentorise.smartcampus.domain.universiadi13.converter.FeratelPubConverter")
+    port update(data : GenericPOI[]);
+
+    @Subscription(serviceId="it.sayservice.ext.feratel", methodName="GetFeratelPubbliche")
+    operation subscribePOIs(file:String);       
+    
+    action initialize() {
+        invoke subscribePOIs("fiemme");
+        invoke subscribePOIs("trento");
+    }
+}
+
+DomainObject FeratelRistService implements POIService {
+
+    @ServiceNotification(serviceId="it.sayservice.ext.feratel", methodName="GetFeratelRistoro", converter="eu.trentorise.smartcampus.domain.universiadi13.converter.FeratelRistConverter")
+    port update(data : GenericPOI[]);
+
+    @Subscription(serviceId="it.sayservice.ext.feratel", methodName="GetFeratelRistoro")
+    operation subscribePOIs(file:String);       
+    
+    action initialize() {
+        invoke subscribePOIs("fiemme");
+        invoke subscribePOIs("trento");
+    }
+}
+
+DomainObject FeratelRicService implements POIService {
+
+    @ServiceNotification(serviceId="it.sayservice.ext.feratel", methodName="GetFeratelRicettive", converter="eu.trentorise.smartcampus.domain.universiadi13.converter.FeratelRicConverter")
+    port update(data : GenericPOI[]);
+
+    @Subscription(serviceId="it.sayservice.ext.feratel", methodName="GetFeratelRicettive")
+    operation subscribePOIs(file:String);       
+    
+    action initialize() {
+        invoke subscribePOIs("fiemme");
+        invoke subscribePOIs("trento");
+    }
+}
+
+DomainObject FeratelSportService implements POIService {
+
+    @ServiceNotification(serviceId="it.sayservice.ext.feratel", methodName="GetFeratelSportive", converter="eu.trentorise.smartcampus.domain.universiadi13.converter.FeratelSportConverter")
+    port update(data : GenericPOI[]);
+
+    @Subscription(serviceId="it.sayservice.ext.feratel", methodName="GetFeratelSportive")
+    operation subscribePOIs(file:String);       
+    
+    action initialize() {
+        invoke subscribePOIs("fiemme");
+        invoke subscribePOIs("trento");
+    }
+}

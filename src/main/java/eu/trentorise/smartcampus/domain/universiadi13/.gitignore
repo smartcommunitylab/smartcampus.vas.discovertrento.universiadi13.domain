@@ -2,3 +2,17 @@
 /UniversiadiEventsServiceInterface.java
 /UniversiadiVenuesServiceDOEngine.java
 /UniversiadiVenuesServiceInterface.java
+/FeratelCommPOIServiceDOEngine.java
+/FeratelCommPOIServiceInterface.java
+/FeratelPubPOIServiceDOEngine.java
+/FeratelPubPOIServiceInterface.java
+/FeratelRicServiceDOEngine.java
+/FeratelRicServiceInterface.java
+/FeratelRistServiceDOEngine.java
+/FeratelRistServiceInterface.java
+/FeratelSportServiceDOEngine.java
+/FeratelSportServiceInterface.java
+/UniversiadiPOIServiceDOEngine.java
+/UniversiadiPOIServiceInterface.java
+/UniversiadiScheduleServiceDOEngine.java
+/UniversiadiScheduleServiceInterface.java

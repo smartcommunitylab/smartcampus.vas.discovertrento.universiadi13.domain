@@ -3,11 +3,14 @@ package eu.trentorise.smartcampus.domain.universiadi13.converter;
 import it.sayservice.platform.core.domain.actions.DataConverter;
 import it.sayservice.platform.core.domain.ext.Tuple;
 import it.sayservice.services.universiadi2013.data.message.Data.Address;
+import it.sayservice.services.universiadi2013.data.message.Data.Event;
 import it.sayservice.services.universiadi2013.data.message.Data.KeyValue;
+import it.sayservice.services.universiadi2013.data.message.Data.Poi;
 import it.sayservice.services.universiadi2013.data.message.Data.Venue;
 
 import java.io.Serializable;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -21,7 +24,7 @@ import com.google.protobuf.ByteString;
 import eu.trentorise.smartcampus.domain.discovertrento.GenericPOI;
 import eu.trentorise.smartcampus.domain.discovertrento.POIData;
 
-public class VenuesDataConverter implements DataConverter {
+public class POIDataConverter implements DataConverter {
 
 	private static final String TYPE_UNIVERSIADI = "universiadi13";   
 	
@@ -41,7 +44,7 @@ public class VenuesDataConverter implements DataConverter {
 		List<GenericPOI> list = new ArrayList<GenericPOI>();
 		for (ByteString bs : data) {
 			try {
-				Venue org = Venue.parseFrom(bs);
+				Poi org = Poi.parseFrom(bs);
 				GenericPOI gp = extractGenericPOI(org);
 				list.add(gp);
 			} catch (Exception e) {
@@ -52,10 +55,10 @@ public class VenuesDataConverter implements DataConverter {
 		return res;
 	}
 
-	private GenericPOI extractGenericPOI(Venue venue) throws ParseException {
+	private GenericPOI extractGenericPOI(Poi venue) throws ParseException {
 		GenericPOI gp = new GenericPOI();
 		
-		gp.setType(TYPE_UNIVERSIADI + " - Venues");
+		gp.setType(TYPE_UNIVERSIADI + " - Places");
 		
 		gp.setSource("Universiadi 2013");
 		
@@ -79,7 +82,6 @@ public class VenuesDataConverter implements DataConverter {
 		if (address == null) {
 			address = venue.getLocation().getAddress(0);
 		}
-		gp.setDescription(createDescription(venue));
 		
 		POIData pd = new POIData();
 		pd.setCity(address.getCity());
@@ -89,14 +91,20 @@ public class VenuesDataConverter implements DataConverter {
 		pd.setLongitude(venue.getLocation().getCoordinate().getLongitude());
 		pd.setPostalCode(address.getPostalCode());
 		pd.setStreet(address.getStreet());
-		if (venue.getTagCount() > 0) {
-			pd.setTags(venue.getTagList().toArray(new String[venue.getTagCount()]));
-		}
 		gp.setPoiData(pd);
+		gp.setDescription(createValue(venue.getDescriptionList()));
 		
 		Map<String,Object> map = new TreeMap<String, Object>();
 		map.put("category", venue.getCategory());
-		map.put("imageUrl", venue.getImageUrl());
+		if (venue.getImageCount() > 0) {
+			map.put("imageUrl", venue.getImage(0).getImageUrl());
+		}
+		map.put("serviceDescription", createValue(venue.getServiceDescriptionList()));
+		map.put("topic", venue.getTopicList());
+		map.put("timetable", createValue(venue.getTimetableList()));
+		map.put("price", createValue(venue.getPriceList()));
+		map.put("seatingCapacity", createValue(venue.getSeatingCapacityList()));
+		map.put("accessibility", createValue(venue.getAccessibilityList()));
 		try {
 			gp.setCustomData(new ObjectMapper().writeValueAsString(map));
 		} catch (Exception e) {
@@ -106,15 +114,16 @@ public class VenuesDataConverter implements DataConverter {
 		return gp;
 	}
 	
-	private String createDescription(Venue p) {
+	private String createValue(List<KeyValue> list) {
+		if (list == null) return "";
 		StringBuilder descr = new StringBuilder();
-		for (KeyValue kv : p.getDescriptionList()) {
+		for (KeyValue kv : list) {
 			if ("IT".equals(kv.getKey())) {
 				descr.append(kv.getValue());
 			}
 		}
-		if (descr.length() == 0 && p.getDescriptionCount() > 0) {
-			descr.append(p.getDescription(0).getValue());
+		if (descr.length() == 0 && list.size() > 0) {
+			descr.append(list.get(0).getValue());
 		}
 		
 		String s = descr.toString();
