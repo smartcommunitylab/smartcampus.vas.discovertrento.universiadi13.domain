@@ -37,7 +37,7 @@ DomainObject UniversiadiEventsService implements EventService {
 }
 DomainObject UniversiadiScheduleService implements EventService {
     
-    @ServiceNotification(serviceId="it.sayservice.ext.universiadi2013", methodName="GetCompetitionSchedule", converter="eu.trentorise.smartcampus.domain.universiadi13.converter.EventsDataConverter")
+    @ServiceNotification(serviceId="it.sayservice.ext.universiadi2013", methodName="GetCompetitionSchedule", converter="eu.trentorise.smartcampus.domain.universiadi13.converter.ScheduleDataConverter")
     port update(data : GenericEvent[]);
 
     @Subscription(serviceId="it.sayservice.ext.universiadi2013", methodName="GetCompetitionSchedule")
@@ -88,6 +88,8 @@ DomainObject FeratelCommPOIService implements POIService {
     action initialize() {
         invoke subscribePOIs("fiemme");
         invoke subscribePOIs("trento");
+        invoke subscribePOIs("pinecembra");
+        invoke subscribePOIs("valsugana");
     }
 }
 
@@ -102,6 +104,8 @@ DomainObject FeratelPubPOIService implements POIService {
     action initialize() {
         invoke subscribePOIs("fiemme");
         invoke subscribePOIs("trento");
+        invoke subscribePOIs("pinecembra");
+        invoke subscribePOIs("valsugana");
     }
 }
 
@@ -116,6 +120,8 @@ DomainObject FeratelRistService implements POIService {
     action initialize() {
         invoke subscribePOIs("fiemme");
         invoke subscribePOIs("trento");
+        invoke subscribePOIs("pinecembra");
+        invoke subscribePOIs("valsugana");
     }
 }
 
@@ -130,6 +136,8 @@ DomainObject FeratelRicService implements POIService {
     action initialize() {
         invoke subscribePOIs("fiemme");
         invoke subscribePOIs("trento");
+        invoke subscribePOIs("pinecembra");
+        invoke subscribePOIs("valsugana");
     }
 }
 
@@ -144,5 +152,7 @@ DomainObject FeratelSportService implements POIService {
     action initialize() {
         invoke subscribePOIs("fiemme");
         invoke subscribePOIs("trento");
+        invoke subscribePOIs("pinecembra");
+        invoke subscribePOIs("valsugana");
     }
 }

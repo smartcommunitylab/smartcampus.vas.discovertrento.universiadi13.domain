@@ -85,12 +85,15 @@ public class EventsDataConverter implements DataConverter {
 		throw new IllegalArgumentException();
 	}
 
+	protected String getSource() {
+		return "Universiadi 2013 - Events";
+	}
 
 	private GenericEvent extractGenericEvent(Event ev) throws ParseException {
 		GenericEvent ge = new GenericEvent();
 		
 		
-		ge.setSource("Universiadi 2013");
+		ge.setSource(getSource());
 
 		boolean hasFromTime = true, hasToTime = true;
 		try {
